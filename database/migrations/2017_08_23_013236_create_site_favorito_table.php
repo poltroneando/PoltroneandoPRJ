@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateNotaTituloTable extends Migration
+class CreateSiteFavoritoTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,24 +12,21 @@ class CreateNotaTituloTable extends Migration
      */
     public function up()
     {
-        Schema::create('nota_titulo', function (Blueprint $table) {
-            $table->increments('id_nota_titulo');
+        Schema::create('site_favorito', function (Blueprint $table) {
+            $table->increments('id_site_favorito');
             $table->integer('id_usuario')->unsigned();
-            $table->integer('id_titulo')->unsigned();
-            $table->decimal('nota',2,2)->nullable();
-            $table->smallInteger('status')->nullable();
-            $table->foreign('id_usuario','fk_nota_titulo_usuario')
+            $table->integer('id_site_origem')->unsigned();
+            $table->unique(['id_usuario','id_site_origem'],'uk_site_favorito');
+            $table->foreign('id_usuario','fk_site_favorito_usuario')
             ->references('id_usuario')
             ->on('usuario')
             ->onDelete('cascade')
             ->onUpdate('cascade');
-            $table->foreign('id_titulo','fk_nota_titulo_titulo')
-            ->references('id_titulo')
-            ->on('titulo')
+            $table->foreign('id_site_origem','fk_site_favorito_site_origem')
+            ->references('id_site_origem')
+            ->on('site_origem')
             ->onDelete('cascade')
             ->onUpdate('cascade');
-        });
-
     }
 
     /**
@@ -39,6 +36,6 @@ class CreateNotaTituloTable extends Migration
      */
     public function down()
     {
-        Schema::drop('nota_titulo');
+        Schema::drop('site_favorito');
     }
 }

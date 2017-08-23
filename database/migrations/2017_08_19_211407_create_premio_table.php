@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePaisTable extends Migration
+class CreatePremioTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,10 +12,10 @@ class CreatePaisTable extends Migration
      */
     public function up()
     {
-        Schema::create('pais', function (Blueprint $table) {
-            $table->increments('id_pais');
-            $table->string('nome',255)->nullable();
-            $table->string('sigla',10)->nullable();
+        Schema::create('premio', function (Blueprint $table) {
+            $table->increments('id_premio');
+            $table->string('nome',255);
+            $table->string('descricao',1000)->nullable();
         });
     }
 
@@ -26,6 +26,6 @@ class CreatePaisTable extends Migration
      */
     public function down()
     {
-        Schema::drop('pais');
+        Schema::drop('premio');
     }
 }

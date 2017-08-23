@@ -14,8 +14,8 @@ class CreatePersonalidadeTable extends Migration
     {
         Schema::create('personalidade', function (Blueprint $table) {
             $table->increments('id_personalidade');
-            $table->string('nome');
-            $table->string('nome_original')->nullable();
+            $table->string('nome',255);
+            $table->string('nome_original',255)->nullable();
             $table->date('data_nascimento')->nullable();
             $table->date('data_obito')->nullable();
             $table->longText('biografia')->nullable();

@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateListaTable extends Migration
+class CreateNotificacaoTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,12 +12,16 @@ class CreateListaTable extends Migration
      */
     public function up()
     {
-        Schema::create('lista', function (Blueprint $table) {
-            $table->increments('id_lista');
+        Schema::create('notificacao', function (Blueprint $table) {
+            $table->increments('id_notificacao');
+            $table->date('data_notificacao')->nullable();
+            $table->time('hora_notificacao')->nullable();
+            $table->smallInteger('lida')->nullable()->default(0);
+            $table->date('data_lida')->nullable();
+            $table->time('hora_lida')->nullable();
             $table->integer('id_usuario')->unsigned();
             $table->string('descricao',255)->nullable();
-            $table->smallInteger('favorito')->unsigned()->nullable();
-            $table->foreign('id_usuario','fk_lista_usuario')
+            $table->foreign('id_usuario','fk_notificacao_usuario')
             ->references('id_usuario')
             ->on('usuario')
             ->onDelete('cascade')
@@ -32,6 +36,6 @@ class CreateListaTable extends Migration
      */
     public function down()
     {
-        Schema::drop('lista');
+        Schema::drop('notificacao');
     }
 }

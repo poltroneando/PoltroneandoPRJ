@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTituloTable extends Migration
+class CreateSiteOrigemTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,21 +12,21 @@ class CreateTituloTable extends Migration
      */
     public function up()
     {
-        Schema::create('titulo', function (Blueprint $table) {
-            $table->increments('id_titulo');
+        Schema::create('site_origem', function (Blueprint $table) {
+            $table->increments('id_site_origem');
             $table->string('nome',255);
-            $table->string('nome_original',255)->nullable();
-            $table->integer('duracao')->nullable();
-            $table->longText('sinopse')->nullable();
-            $table->string('capa',255)->nullable();
-            $table->integer('ano');
-            $table->smallInteger('tipo');
+            $table->string('nome_alternativo',255)->nullable();
+            $table->string('url',255)->nullable();
+            $table->string('logo',255)->nullable();
+            $table->date('data_criacao')->nullable();
+            $table->text('descricao')->nullable();
             $table->integer('id_pais')->unsigned()->nullable();
-            $table->foreign('id_pais','fk_titulo_pais')
+            $table->foreign('id_pais','fk_site_origem_pais')
             ->references('id_pais')
             ->on('pais')
             ->onDelete('set null')
             ->onUpdate('cascade');
+
         });
     }
 
@@ -37,6 +37,6 @@ class CreateTituloTable extends Migration
      */
     public function down()
     {
-        Schema::drop('titulo');
+        Schema::drop('site_origem');
     }
 }

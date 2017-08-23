@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateNotaTituloTable extends Migration
+class CreateNotaPersonagemTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,24 +12,22 @@ class CreateNotaTituloTable extends Migration
      */
     public function up()
     {
-        Schema::create('nota_titulo', function (Blueprint $table) {
-            $table->increments('id_nota_titulo');
+        Schema::create('nota_personagem', function (Blueprint $table) {
+            $table->increments('id_nota_personagem');
             $table->integer('id_usuario')->unsigned();
-            $table->integer('id_titulo')->unsigned();
+            $table->integer('id_elenco')->unsigned();
             $table->decimal('nota',2,2)->nullable();
-            $table->smallInteger('status')->nullable();
-            $table->foreign('id_usuario','fk_nota_titulo_usuario')
+            $table->foreign('id_usuario','fk_nota_personagem_usuario')
             ->references('id_usuario')
             ->on('usuario')
             ->onDelete('cascade')
             ->onUpdate('cascade');
-            $table->foreign('id_titulo','fk_nota_titulo_titulo')
-            ->references('id_titulo')
-            ->on('titulo')
+            $table->foreign('id_elenco','fk_nota_personagem_elenco')
+            ->references('id_elenco')
+            ->on('elenco')
             ->onDelete('cascade')
             ->onUpdate('cascade');
         });
-
     }
 
     /**
@@ -39,6 +37,6 @@ class CreateNotaTituloTable extends Migration
      */
     public function down()
     {
-        Schema::drop('nota_titulo');
+        Schema::drop('nota_personagem');
     }
 }

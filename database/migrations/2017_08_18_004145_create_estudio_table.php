@@ -14,7 +14,7 @@ class CreateEstudioTable extends Migration
     {
         Schema::create('estudio', function (Blueprint $table) {
             $table->increments('id_estudio');
-            $table->string('nome');
+            $table->string('nome',255);
             $table->integer('ano_inauguracao')->nullable();
             $table->integer('id_pais')->unsigned()->nullable();
             $table->foreign('id_pais','fk_estudio_pais')

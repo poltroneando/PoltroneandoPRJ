@@ -24,7 +24,7 @@ class CreateUsersTable extends Migration
             $table->smallInteger('genero')->nullable();
             $table->string('foto')->nullable();
             $table->string('celular')->nullable();
-            $table->string('username')->unique()->nullable();
+            $table->string('username',60)->unique()->nullable();
             $table->string('link_facebook')->nullable();
             $table->string('link_twitter')->nullable();
         });

@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateListaTable extends Migration
+class CreateIdoloTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,14 +12,18 @@ class CreateListaTable extends Migration
      */
     public function up()
     {
-        Schema::create('lista', function (Blueprint $table) {
-            $table->increments('id_lista');
+        Schema::create('idolo', function (Blueprint $table) {
+            $table->increments('id_idolo');
             $table->integer('id_usuario')->unsigned();
-            $table->string('descricao',255)->nullable();
-            $table->smallInteger('favorito')->unsigned()->nullable();
-            $table->foreign('id_usuario','fk_lista_usuario')
+            $table->integer('id_personalidade')->unsigned();
+            $table->foreign('id_usuario','fk_idolo_usuario')
             ->references('id_usuario')
             ->on('usuario')
+            ->onDelete('cascade')
+            ->onUpdate('cascade');
+            $table->foreign('id_personalidade','fk_idolo_personalidade')
+            ->references('id_personalidade')
+            ->on('personalidade')
             ->onDelete('cascade')
             ->onUpdate('cascade');
         });
@@ -32,6 +36,6 @@ class CreateListaTable extends Migration
      */
     public function down()
     {
-        Schema::drop('lista');
+        Schema::drop('idolo');
     }
 }
