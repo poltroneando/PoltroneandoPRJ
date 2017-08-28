@@ -27,6 +27,7 @@ class CreateSiteFavoritoTable extends Migration
             ->on('site_origem')
             ->onDelete('cascade')
             ->onUpdate('cascade');
+        });
     }
 
     /**

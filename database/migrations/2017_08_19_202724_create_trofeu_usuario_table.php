@@ -13,8 +13,8 @@ class CreateTrofeuUsuarioTable extends Migration
     public function up()
     {
         Schema::create('trofeu_usuario', function (Blueprint $table) {
-            $table->integer('id_trofeu');
-            $table->integer('id_usuario');            
+            $table->integer('id_trofeu')->unsigned();
+            $table->integer('id_usuario')->unsigned();            
             $table->time('hora_realizacao')->nullable();
             $table->date('data_realizacao')->nullable();
             $table->primary(['id_trofeu','id_usuario']);

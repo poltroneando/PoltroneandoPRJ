@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Usuario;
 use Validator;
 use App\Http\Controllers\Controller;
+use     Socialite;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 
@@ -46,12 +47,13 @@ class AuthController extends Controller
      * @param  array  $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
+    
     protected function validator(array $data)
     {
         return Validator::make($data, [
             'nome' => 'required|max:255',
             'email' => 'required|email|max:255|unique:usuario',
-            'senha' => 'required|min:6|confirmed',
+            'password' => 'required|min:6|confirmed',
         ]);
     }
 
@@ -66,7 +68,17 @@ class AuthController extends Controller
         return Usuario::create([
             'nome' => $data['nome'],
             'email' => $data['email'],
-            'senha' => bcrypt($data['senha']),
+            'password' => bcrypt($data['password']),
         ]);
+    }
+
+    public function loginFacebook()
+    {
+        return \Socialite::driver('facebook')->redirect();
+    }
+    public function loginCallback()
+    {
+        $userSocial = \Socialite::driver('facebook')->stateless()->user();
+        dd($userSocial);
     }
 }

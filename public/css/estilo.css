@@ -1,0 +1,72 @@
+.img-login{
+	margin-bottom: 25px;
+}
+.navbar {
+	background-color: #083C52;
+	color : white;
+}
+.navbar-font,.navbar-font a{
+	color: orange;
+}
+.form-login-hide{
+	display: none;
+}
+#btn-login, #btn-cadast {
+	background-color: #083C52;
+	color : white;
+}
+#btn-login.active, #btn-cadast.active{
+	background-color: white;
+	color : #083C52;
+}
+.form{
+	margin-top: 30px;
+}
+.navbar-font .navbar-toggle {
+    border-color: #ddd;
+}
+.navbar-font .navbar-toggle .icon-bar {
+    background-color: #888;
+}
+.input-group-addon .glyphicon{
+	color: #006D93;
+}
+.topo-perfil{
+	margin-top: -20px;
+}
+.profile-capa {
+    background-color: #23466b;
+    background-position: 50% 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: local;
+}
+.profile-header {
+    padding: 45px 0 15px;
+    position: relative;
+    text-align: center;
+    width: 100%;
+}
+.profile-header a{
+	color: #fff;
+}
+.profile-name {
+    display: inline-block;
+    text-align: center;
+    max-width: 100%;
+    margin-bottom: 20px;
+}
+.profile-name .blockLink {
+    color: #fff;
+    font-size: 18px;
+    text-align: center;
+    text-shadow: 0 0 1px #333;
+	overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: block;
+    font-weight: bold;
+    margin-top: 3px;
+	text-decoration: none;
+}

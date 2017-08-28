@@ -16,9 +16,21 @@ Route::get('/', function () {
 });
 
 Route::auth();
+Route::group(['prefix'=>'/perfil'],function(){
+    Route::get('/',['middleware'=>'auth','uses'=>'PerfilController@profile']);
+    Route::post('/', 'PerfilController@update_avatar');
+});
+Route::get('/cadastrar', function() {
+	return view('auth/login',['tipo'=>'1']);
+});
+Route::get('/cadastrar', function() {	
+	return view('auth/login',['tipo'=>'1']);
+});
+Route::get('/login', function() {
+	return view('auth/login',['tipo'=>'0']);
+});
+Route::get('/login/facebook', 'Auth\AuthController@loginFacebook');
+Route::get('/login/callback', 'Auth\AuthController@loginCallback');
 
 Route::get('/home', 'HomeController@index');
 
-Route::auth();
-
-Route::get('/home', 'HomeController@index');
