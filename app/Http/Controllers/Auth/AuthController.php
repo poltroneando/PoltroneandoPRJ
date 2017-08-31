@@ -76,9 +76,18 @@ class AuthController extends Controller
     {
         return \Socialite::driver('facebook')->redirect();
     }
-    public function loginCallback()
+    public function facebookCallback()
     {
         $userSocial = \Socialite::driver('facebook')->stateless()->user();
+        dd($userSocial);
+    }
+    public function loginGoogle()
+    {
+        return \Socialite::driver('google')->redirect();
+    }
+    public function googleCallback()
+    {
+        $userSocial = \Socialite::driver('google')->stateless()->user();
         dd($userSocial);
     }
 }

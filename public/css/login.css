@@ -1,0 +1,55 @@
+html, body{
+    height: 100%;
+    background-image: url("/imgs/paper.jpeg");
+    background-size: cover;
+    background-position: center;
+    
+}
+.topo-bar{
+    background-color: #ECF9FF;
+    height: 50px;
+    width: 100%;
+}
+.navbar-brand{
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: -5px;
+}
+.container{
+    height: 100%;
+}
+.btn-group{
+    padding-top: 20px;
+    color: #B9D2DE;
+    padding-bottom: 30px;
+}
+.btn1{
+    background-color: transparent;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+}
+.active{
+    border-bottom: solid;
+    background-color: transparent;    
+    border-bottom-width: 2px;    
+    border-bottom-color: white;
+}
+.form-login-hide{
+	display: none;
+}
+#form-login{
+    color:white;    
+}
+.btn-social{
+    margin-top: 10px;
+    width: 100%;
+}
+#google-btn{
+    background-color: #d34836;
+}
+#facebook-btn{
+    background-color: #3B5997;
+}

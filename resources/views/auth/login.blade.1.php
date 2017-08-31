@@ -1,66 +1,39 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.app')
 
-    <title>Poltroneando</title>
-
-    <!-- Fonts -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css" integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700">
-
-    <!-- Styles -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="{{asset('css/login.css')}}"> 
-    {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
-
-    <style>
-        body {
-            font-family: 'Helvetica';
-        }
-
-        .fa-btn {
-            margin-right: 6px;
-        }
-    </style>
-</head>
-<body id="app-layout">
-    <div class="topo-bar">
-
-        <!-- Branding Image -->
-        <a class="navbar-brand" href="{{ url('/') }}">
-            <img src="/imgs/marca.png" class="img-brand" alt="Poltroneando" style="max-height:35px;">
-        </a>
+@section('content')
+<div class="container">
+    <div class="row text-center">
+        <div class="col-md-8 col-md-offset-2">
+            <img src="/imgs/marca.png" class="img-login" alt="Poltroneando" style="max-width: 300px;">
+        </div>
     </div>
-    <div class="container">
-        <div class="row text-center">
-            <div class="col-md-8 col-md-offset-2">
-                <div class="btn-group" role="group" aria-label="..." data-toggle="buttons">
-                    <button type="button" id="btn-login" style="width: 100px;" class="btn1 @if ($tipo==0) active @endif"><b>Login</b></button>
-                    <button type="button" id="btn-cadast" style="width: 100px;" class="btn1 @if ($tipo) active @endif"><b>Cadastrar</b></button>
-                </div>
+    <div class="row text-center">
+        <div class="col-md-4 col-md-offset-4">
+            <div class="btn-group" role="group" aria-label="..." data-toggle="buttons">
+                <button type="button" id="btn-login" style="width: 100px;" class="btn btn-primary @if ($tipo==0) active @endif">Login</button>
+                <button type="button" id="btn-cadast" style="width: 100px;" class="btn btn-primary @if ($tipo) active @endif">Cadastrar</button>
             </div>
         </div>
-        <div class="row">
-            <div class="col-xs-10 col-xs-offset-1">
-                <form class="form-horizontal @if ($tipo) form-login-hide @endif" id="form-login" role="form" method="POST" action="{{ url('/login') }}">
-                    {{ csrf_field() }}
+    </div>
+    </br>
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+            <form class="form-horizontal @if ($tipo) form-login-hide @endif" id="form-login" role="form" method="POST" action="{{ url('/login') }}">
+                {{ csrf_field() }}
 
-                    <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                        <label for="email" class="control-label sr-only">E-Mail</label>
-                        <div class="input-group">
-                            <span class="input-group-addon" id="addon1"><span class="glyphicon glyphicon-envelope"></span></span> 
-                            <input id="email" type="email" class="form-control" name="email" placeholder="E-Mail" value="{{ old('email') }}" aria-describedby="addon1">
-                        </div>
-                        @if ($errors->has('email'))
-                            <span class="help-block">
-                                <strong>{{ $errors->first('email') }}</strong>
-                            </span>
-                        @endif
+                <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                    <label for="email" class="control-label sr-only">E-Mail</label>
+                    <div class="input-group">
+                        <span class="input-group-addon" id="addon1"><span class="glyphicon glyphicon-envelope"></span></span> 
+                        <input id="email" type="email" class="form-control" name="email" placeholder="E-Mail" value="{{ old('email') }}" aria-describedby="addon1">
                     </div>
-                
+                    @if ($errors->has('email'))
+                        <span class="help-block">
+                            <strong>{{ $errors->first('email') }}</strong>
+                        </span>
+                    @endif
+                </div>
+
                 <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                     <label for="password" class="control-label sr-only">Senha</label>
                     <div class="input-group">
@@ -75,11 +48,13 @@
                 </div>
 
                 <div class="form-group">
+           <!--         <div class="col-md-6 col-md-offset-4">-->
                     <div class="checkbox">
                         <label>
                             <input type="checkbox" name="remember"> Lembrar de mim
                         </label>
-                    </div> 
+                    </div>
+                    <!-- </div> -->
                 </div>
 
                 <div class="form-group">
@@ -91,6 +66,12 @@
                     <a class="btn btn-link" href="{{ url('/password/reset') }}">Esqueceu a senha?</a>
                 <!--    </div>  -->
                 </div>
+                <a href="{{ url('/login/facebook') }}" class="btn btn-primary">
+                    Facebook
+                </a>
+                <a href="{{ url('/login/google') }}" class="btn btn-primary">
+                    Google
+                </a>
             </form>
             <form class="form-horizontal @if ($tipo==0) form-login-hide @endif" id="form-cadast" role="form" method="POST" action="{{ url('/register') }}">
                 {{ csrf_field() }}
@@ -122,7 +103,7 @@
                 </div>
 
                 <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                    <label for="password" class=" control-label sr-only">Senha</label>
+                    <label for="password" class="col-md-4 control-label sr-only">Senha</label>
 
                     <!-- <div class="col-md-6"> -->
                     <input id="password" type="password" class="form-control" placeholder="Senha" name="password">
@@ -150,33 +131,14 @@
                 </div>
 
                 <div class="form-group">
-                    <div class="col-xs-6 col-xs-offset-3">
+                    <div class="col-md-6 col-md-offset-4">
                         <button type="submit" class="btn btn-primary" style="background-color: #083C52;">
                             <i class="fa fa-btn fa-user"></i> Cadastrar
                         </button>
                     </div>
                 </div>
             </form> 
-            
-            </div>
-        </div>
-        <div class="col-xs-10 col-xs-offset-1 col-md-4">
-            <a href="{{ url('/login/facebook') }}" class="btn btn-primary btn-social" id="facebook-btn">
-                Facebook
-            </a>
-        </div> 
-                   
-        <div class="col-xs-10 col-xs-offset-1 col-md-4">
-            <a href="{{ url('/login/google') }}" class="btn btn-primary btn-social" id="google-btn">
-                Google
-            </a>
-        </div>
+        </div>        
     </div>
-
-    <!-- JavaScripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" integrity="sha384-I6F5OKECLVtK/BL+8iSLDEHowSAfUo76ZL9+kGAgTRdiByINKJaqTPH/QVNS1VDb" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="{{asset('js/main.js')}}"></script>
-    {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
-</body>
-</html>
+</div>
+@endsection

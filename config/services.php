@@ -38,6 +38,11 @@ return [
     'facebook' => [
         'client_id' => '176313692799071',
         'client_secret' => '4f6f28a225943e84442204d86556d7e0',
-        'redirect' => 'http://localhost:8000/login/callback',
+        'redirect' => 'http://localhost:8000/login/facebook/callback',
+    ],
+    'google' => [
+        'client_id' => '14182152482-o2birgl4ebjt8idb0vclnbtpstdbg751.apps.googleusercontent.com',
+        'client_secret' => 'wEGzS6yu7MlrcXiMifgmRU8o',
+        'redirect' => 'http://localhost:8000/login/google/callback',
     ],
 ];
