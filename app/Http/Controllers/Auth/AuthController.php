@@ -5,7 +5,8 @@ namespace App\Http\Controllers\Auth;
 use App\Usuario;
 use Validator;
 use App\Http\Controllers\Controller;
-use     Socialite;
+use Socialite;
+use DB; 
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 
@@ -79,7 +80,20 @@ class AuthController extends Controller
     public function facebookCallback()
     {
         $userSocial = \Socialite::driver('facebook')->stateless()->user();
-        dd($userSocial);
+        $user = Usuario::where('email',$userSocial->email)->first();
+        if (!$user) {
+            $user = Usuario::create([
+                'nome' => $userSocial->name,
+                'email' => $userSocial->email,
+                'genero' => $userSocial->user->gender,      
+                'link_facebook' => $userSocial->profileUrl,          
+            ]);
+            \Auth::login($user);    
+            return redirect('/perfil/editar/');            
+        } else {
+            \Auth::login($user);    
+            return redirect('/');
+        }
     }
     public function loginGoogle()
     {
@@ -88,6 +102,19 @@ class AuthController extends Controller
     public function googleCallback()
     {
         $userSocial = \Socialite::driver('google')->stateless()->user();
-        dd($userSocial);
+        $user = Usuario::where('email',$userSocial->email)->first();
+        if (!$user) {
+            $user = Usuario::create([
+                'nome' => $userSocial->name,
+                'email' => $userSocial->email,
+                'genero' => $userSocial->user->gender,                
+            ]);
+            \Auth::login($user);
+            return redirect('/perfil/editar/');
+        }else
+        {   
+            \Auth::login($user);
+            return redirect('/');
+        }
     }
 }

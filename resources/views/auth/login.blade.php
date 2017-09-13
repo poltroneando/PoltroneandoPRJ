@@ -93,13 +93,15 @@
                 </div>
             </form>
             <form class="form-horizontal @if ($tipo==0) form-login-hide @endif" id="form-cadast" role="form" method="POST" action="{{ url('/register') }}">
-                {{ csrf_field() }}
+                <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
                 <div class="form-group{{ $errors->has('nome') ? ' has-error' : '' }}">
                     <label for="nome" class="control-label sr-only">Nome</label>
+                    <div class="input-group">
+                        <span class="input-group-addon" id="addon2"><span class="glyphicon glyphicon-user"></span></span>                 
+                        <input id="nome" type="text" class="form-control" name="nome" placeholder="Nome" value="{{ old('nome') }}">
 
-                    <input id="nome" type="text" class="form-control" name="nome" placeholder="Nome" value="{{ old('nome') }}">
-
+                    </div>
                     @if ($errors->has('nome'))
                         <span class="help-block">
                             <strong>{{ $errors->first('nome') }}</strong>
@@ -109,49 +111,48 @@
 
                 <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                     <label for="email" class="control-label sr-only">E-Mail</label>
-
+                    <div class="input-group">
+                        <span class="input-group-addon" id="addon2"><span class="glyphicon glyphicon-envelope"></span></span>                 
                    <!-- <div class="col-md-6"> -->
-                    <input id="email" type="email" class="form-control" name="email" placeholder="E-Mail" value="{{ old('email') }}">
-
+                        <input id="email" type="email" class="form-control" name="email" placeholder="E-Mail" value="{{ old('email') }}">
+                    </div>
                     @if ($errors->has('email'))
                         <span class="help-block">
                             <strong>{{ $errors->first('email') }}</strong>
                         </span>
                     @endif
-                   <!-- </div> -->
                 </div>
 
                 <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                     <label for="password" class=" control-label sr-only">Senha</label>
+                    <div class="input-group">
+                        <span class="input-group-addon" id="addon2"><span class="glyphicon glyphicon-lock"></span></span>                 
+                        <input id="password" type="password" class="form-control" placeholder="Senha" name="password">
 
-                    <!-- <div class="col-md-6"> -->
-                    <input id="password" type="password" class="form-control" placeholder="Senha" name="password">
-
+                    </div>
                     @if ($errors->has('password'))
                         <span class="help-block">
                             <strong>{{ $errors->first('password') }}</strong>
                         </span>
                     @endif
-                   <!-- </div> -->
                 </div>
 
                 <div class="form-group{{ $errors->has('password_confirmation') ? ' has-error' : '' }}">
                     <label for="password-confirm" class="control-label sr-only">Confirmar Senha</label>
-
-                    <!-- <div class="col-md-6"> -->
-                    <input id="password-confirm" type="password" class="form-control" placeholder="Confirmar Senha" name="password_confirmation">
-
+                    <div class="input-group">
+                        <span class="input-group-addon" id="addon2"><span class="glyphicon glyphicon-lock"></span></span>                 
+                        <input id="password-confirm" type="password" class="form-control" placeholder="Confirmar Senha" name="password_confirmation">
+                    </div>
                     @if ($errors->has('password_confirmation'))
                         <span class="help-block">
                             <strong>{{ $errors->first('password_confirmation') }}</strong>
                         </span>
                     @endif
-                    <!-- </div> -->
                 </div>
 
                 <div class="form-group">
-                    <div class="col-xs-6 col-xs-offset-3">
-                        <button type="submit" class="btn btn-primary" style="background-color: #083C52;">
+                    <div class="col-xs-10 col-xs-offset-1 col-md-4">
+                        <button type="submit" class="btn btn-primary btn-social" style="background-color: #083C52;">
                             <i class="fa fa-btn fa-user"></i> Cadastrar
                         </button>
                     </div>

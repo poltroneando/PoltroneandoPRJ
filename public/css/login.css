@@ -53,3 +53,8 @@ html, body{
 #facebook-btn{
     background-color: #3B5997;
 }
+.input-group-addon{
+    background-color: #4D7E8D;
+    border: none;
+    color: white;
+}
