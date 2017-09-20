@@ -22,11 +22,14 @@ class CreateUsersTable extends Migration
             $table->date('data_nascimento')->nullable();
             $table->text('biografia')->nullable();
             $table->smallInteger('genero')->nullable();
-            $table->string('foto')->nullable();
+            $table->string('foto')->nullable()->default('default.png');
             $table->string('celular')->nullable();
             $table->string('username',60)->unique()->nullable();
             $table->string('link_facebook')->nullable();
-            $table->string('link_twitter')->nullable();
+            $table->string('link_gplus')->nullable();
+            $table->smallInteger('verificado')->default('0');
+            $table->smallInteger('confirmou_termos')->default('0');
+            $table->string('capa')->nullable();
         });
     }
 

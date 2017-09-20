@@ -63,6 +63,9 @@
 .profile-header a{
 	color: #fff;
 }
+.profile-header img{
+    border: 3px solid white;
+}
 .profile-name {
     display: inline-block;
     text-align: center;

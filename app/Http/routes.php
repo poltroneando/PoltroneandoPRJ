@@ -29,6 +29,7 @@ Route::get('/cadastrar', function() {
 Route::get('/login', function() {
 	return view('auth/login',['tipo'=>'0']);
 });
+
 Route::get('/login/facebook', 'Auth\AuthController@loginFacebook');
 Route::get('/login/facebook/callback', 'Auth\AuthController@facebookCallback');
 Route::get('/login/google', 'Auth\AuthController@loginGoogle');

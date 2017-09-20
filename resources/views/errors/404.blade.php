@@ -36,7 +36,6 @@
         <div class="container">
             <div class="white-box">
                 <h5>Desculpe, esta página não está disponível</h5>
-                <br>
                 <h5>O link acessado pode estar quebrado, ou a página pode ter sido removida.</h5>
             </div>
         </div>

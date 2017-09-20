@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use Auth;
 
 class PerfilController extends Controller
 {
@@ -13,6 +14,7 @@ class PerfilController extends Controller
         $this->middleware('auth');
     }
     public function profile(){
+		//dd(Auth::user());
         return view('profile/index', array('user' => Auth::user()));
     }
      public function update_avatar(Request $request){

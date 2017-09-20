@@ -6,6 +6,8 @@ use App\Usuario;
 use Validator;
 use App\Http\Controllers\Controller;
 use Socialite;
+use Image;
+use File;
 use DB; 
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
@@ -85,15 +87,25 @@ class AuthController extends Controller
             $user = Usuario::create([
                 'nome' => $userSocial->name,
                 'email' => $userSocial->email,
-                'genero' => $userSocial->user->gender,      
                 'link_facebook' => $userSocial->profileUrl,          
             ]);
+            $avatar = $userSocial->avatar_original;
+            $filename = time().$userSocial->id . '.jpg';  
+    		Image::make($avatar)->resize(300, 300)->save( public_path('/uploads/avatars/' . $filename ) );
+			if ($user->foto <> 'default.jpg'){
+				if (file_exists(public_path().'/uploads/avatars/'.$user->foto)){
+					File::delete(public_path().'/uploads/avatars/'.$user->foto);
+				}
+			}
+            $user->foto = $filename;                
+    		$user->save();        
             \Auth::login($user);    
             return redirect('/perfil/editar/');            
         } else {
             \Auth::login($user);    
             return redirect('/');
         }
+        //dd($userSocial);
     }
     public function loginGoogle()
     {
