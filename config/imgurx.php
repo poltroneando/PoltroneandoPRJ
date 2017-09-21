@@ -1,5 +1,5 @@
 <?php
 return [
-    'client_id'    =>  '2503759eeb3b705',
-    'client_secret'=>   '12542778ed144f0cae59e60719ccd74de9d95b65',
+    'client_id'    =>  'e32cdf713264617',
+    'client_secret'=>   '4afcf9c0c754db308acc83c9d396c8d5f6f06c28',
 ];

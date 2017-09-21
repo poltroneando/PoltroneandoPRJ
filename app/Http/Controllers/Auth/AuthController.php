@@ -96,9 +96,21 @@ class AuthController extends Controller
 				if (file_exists(public_path().'/uploads/avatars/'.$user->foto)){
 					File::delete(public_path().'/uploads/avatars/'.$user->foto);
 				}
+			}            
+			$client = new \Imgur\Client();
+			$client->setOption('client_id', 'e32cdf713264617');
+			$client->setOption('client_secret', '4afcf9c0c754db308acc83c9d396c8d5f6f06c28');
+			$imageData = [
+				'image' => public_path('/uploads/avatars/' . $filename ),
+				'type' => 'file',
+			];
+            $res = $client->api('image')->upload($imageData);
+            if (file_exists(public_path().'/uploads/avatars/'.$filename)){
+                File::delete(public_path().'/uploads/avatars/'.$filename);
 			}
-            $user->foto = $filename;                
-    		$user->save();        
+    		$user->foto = $res->getData()['link'];
+    		$user->save();
+            
             \Auth::login($user);    
             return redirect('/perfil/editar/');            
         } else {
@@ -115,13 +127,36 @@ class AuthController extends Controller
     {
         $userSocial = \Socialite::driver('google')->stateless()->user();
         $user = Usuario::where('email',$userSocial->email)->first();
+        //dd($userSocial);
         if (!$user) {
             $user = Usuario::create([
                 'nome' => $userSocial->name,
                 'email' => $userSocial->email,
-                'genero' => $userSocial->user->gender,                
+                'link_gplus' => $userSocial->user['url'],                
             ]);
-            \Auth::login($user);
+            $avatar = $userSocial->avatar_original;
+            $filename = time().$userSocial->id . '.jpg';  
+    		Image::make($avatar)->resize(300, 300)->save( public_path('/uploads/avatars/' . $filename ) );
+			if ($user->foto <> 'default.jpg'){
+				if (file_exists(public_path().'/uploads/avatars/'.$user->foto)){
+					File::delete(public_path().'/uploads/avatars/'.$user->foto);
+				}
+			}            
+			$client = new \Imgur\Client();
+			$client->setOption('client_id', 'e32cdf713264617');
+			$client->setOption('client_secret', '4afcf9c0c754db308acc83c9d396c8d5f6f06c28');
+			$imageData = [
+				'image' => public_path('/uploads/avatars/' . $filename ),
+				'type' => 'file',
+			];
+			$res = $client->api('image')->upload($imageData);
+            if (file_exists(public_path().'/uploads/avatars/'.$filename)){
+                File::delete(public_path().'/uploads/avatars/'.$filename);
+			}
+    		$user->foto = $res->getData()['link'];
+    		$user->save();
+            
+            \Auth::login($user);    
             return redirect('/perfil/editar/');
         }else
         {   
