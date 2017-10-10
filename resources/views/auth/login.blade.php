@@ -14,6 +14,7 @@
     <!-- Styles -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="{{asset('css/login.css')}}"> 
+    <link rel="stylesheet" type="text/css" href="{{asset('css/menu.css')}}"> 
     {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
 
     <style>
@@ -33,6 +34,23 @@
         <a class="navbar-brand" href="{{ url('/') }}">
             <img src="/imgs/marca.png" class="img-brand" alt="Poltroneando" style="max-height:35px;">
         </a>
+    </div>
+    <div class="drop">
+        <nav class="nav nav-aberta">
+            <div class="wrap">
+                <ul class="listaNav">
+                    <li><a href="#">Item 1</a></li>
+                    <li><a href="#">Item 2</a></li>
+                    <li><a href="#">Item 3</a></li>
+                    <li><a href="#">Item 4</a></li>
+                    <li><a href="#">Item 5</a></li>
+                    <li><a href="#">Item 6</a></li>
+                    <li><a href="#">Item 7</a></li>
+                    <li><a href="#">Item 8</a></li>
+                    <li><a href="#">Item 9</a></li>
+                </ul>
+            </div>
+        </nav>
     </div>
     <div class="container">
         <div class="row text-center">
