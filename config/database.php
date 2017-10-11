@@ -54,11 +54,11 @@ return [
 
         'mysql' => [
             'driver' => 'mysql',
-            'host' => env('DB_HOST', 'localhost'),
-            'port' => env('DB_PORT', '3306'),
-            'database' => env('DB_DATABASE', 'forge'),
-            'username' => env('DB_USERNAME', 'forge'),
-            'password' => env('DB_PASSWORD', ''),
+            'host' => env('DB_HOST', 'mysql857.umbler.com'),
+            'port' => env('DB_PORT', ''),
+            'database' => env('DB_DATABASE', 'poltroneandodb'),
+            'username' => env('DB_USERNAME', 'dbuser'),
+            'password' => env('DB_PASSWORD', 'poltron34nd0'),
             'charset' => 'utf8',
             'collation' => 'utf8_unicode_ci',
             'prefix' => '',
