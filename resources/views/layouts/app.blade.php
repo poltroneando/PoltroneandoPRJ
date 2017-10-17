@@ -70,6 +70,7 @@
             </div>
         </div>
     </nav>
+    @yield('menu')
 
     @yield('content')
 
