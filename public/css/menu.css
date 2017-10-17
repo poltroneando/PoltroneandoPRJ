@@ -76,13 +76,13 @@ a:hover {
         right: auto;
         color: #FFF;
         cursor: pointer;
-        width: 24px;
-        height: 24px;
-        z-index: 1000;
+        width: 36px;
+        height: 36px;
+        z-index: 9999;
         border-radius: 10%;
         display: block;
         background: #444;
-        padding: 12px 6px 6px 6px;
+        padding: 10px 6px 6px 6px;
     }
     .ico-bar {
         display: block;
