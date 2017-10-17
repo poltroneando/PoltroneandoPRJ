@@ -1,4 +1,4 @@
-@section('menu')
+@section('navmenu')
 <nav class="nav nav-aberta">
     <div class="wrap">
         <ul class="listaNav">
@@ -14,4 +14,4 @@
         </ul>
     </div>
 </nav>
-@section('menu')
+@endsection
