@@ -47,7 +47,9 @@ a:hover {
         max-width: 100%;
         margin: 0;
     }
-  
+  .container{
+      width: 100%;
+  }
     .nav {
         width: 175px;
         position: fixed;
