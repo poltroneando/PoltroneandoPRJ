@@ -10,7 +10,12 @@
     width: 20%;
     font-size: 1em;
     float: left;
-    background: #444;
+    background: #083C52;
+}
+.container{
+    height: 100%;
+    width: 80%;
+    float: right;
 }
 
 .nav ul {
@@ -29,7 +34,7 @@ a {
 }
     
 a:hover {
-    color: red;
+    color: #1a75dde7;
 }
     
 .nav-toggle {
@@ -53,7 +58,7 @@ a:hover {
     .nav ul {
         padding: .5em;
         margin: 0;
-        background: #444;
+        background: #083C52;
     }		
         
     li {
@@ -71,7 +76,7 @@ a:hover {
             
     .nav-toggle {
         position: fixed;
-        top: 15px;
+        top: 8px;
         left: 15px;
         right: auto;
         color: #FFF;
@@ -81,7 +86,7 @@ a:hover {
         z-index: 9999;
         border-radius: 10%;
         display: block;
-        background: #444;
+        background: #083C52;
         padding: 10px 6px 6px 6px;
     }
     .ico-bar {

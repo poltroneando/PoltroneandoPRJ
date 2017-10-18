@@ -14,6 +14,7 @@
     <!-- Styles -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="{{asset('public/css/estilo.css')}}"> 
+    <link rel="stylesheet" type="text/css" href="{{asset('public/css/login.css')}}"> 
     <link rel="stylesheet" type="text/css" href="{{asset('public/css/menu.css')}}"> 
     {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
     <link rel="shortcut icon" href="{{{ asset('public/favicon.ico') }}}">
@@ -29,11 +30,11 @@
     </style>
 </head>
 <body id="app-layout">
-    <nav class="navbar navbar-default navbar-static-top">
+    <!-- <nav class="navbar navbar-default navbar-static-top">
         <div class="container">
             <div class="navbar-header">
 
-                <!-- Collapsed Hamburger -->
+                <!-- Collapsed Hamburger ->
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
                     <span class="sr-only">Toggle Navigation</span>
                     <span class="icon-bar"></span>
@@ -41,28 +42,28 @@
                     <span class="icon-bar"></span>
                 </button>
 
-                <!-- Branding Image -->
+                <!-- Branding Image ->
                 <a class="navbar-brand" href="{{ url('/') }}">
                     Poltroneando
                 </a>
             </div>
 
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
-                <!-- Left Side Of Navbar -->
+                <!-- Left Side Of Navbar ->
                 <ul class="nav navbar-nav">
                     <li><a href="{{ url('/home') }}">Home</a></li>
                 </ul>
 
-                <!-- Right Side Of Navbar -->
+                <!-- Right Side Of Navbar ->
                 <ul class="nav navbar-nav navbar-right">
-                    <!-- Authentication Links -->
+                    <!-- Authentication Links ->
                     @if (Auth::guest())
                         <li><a href="{{ url('/login') }}">Login</a></li>
                         <li><a href="{{ url('/cadastrar') }}">Cadastrar</a></li>
                     @else
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                {{ Auth::user()->name }} <!--<span class="caret">--></span>
+                                {{ Auth::user()->name }} <!--<span class="caret">-></span>
                             </a>
                         </li>
                         <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
@@ -70,12 +71,28 @@
                 </ul>
             </div>
         </div>
-    </nav>
+    </nav> -->
+    <div class="topo-bar">
+
+        <!-- Branding Image -->
+        <a class="navbar-brand" href="{{ url('/') }}">
+            <img src="public/imgs/marca.png" class="img-brand" alt="Poltroneando" style="max-height:35px;">
+        </a>
+    </div>
+
     <nav class="nav nav-aberta">
         <div class="wrap">
             <ul class="listaNav">
-                <li><a href="#">Item 1</a></li>
-                <li><a href="#">Itemsa 2</a></li>
+                @if (Auth::guest())
+                <li><a href="{{ url('/login') }}">Login ou Cadastrar</a></li>
+                @else
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                        {{ Auth::user()->name }} <span class="caret"></span>
+                    </a>
+                </li>
+                <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
+                @endif
                 <li><a href="#">Item 3</a></li>
                 <li><a href="#">Item 4</a></li>
                 <li><a href="#">Item 5</a></li>

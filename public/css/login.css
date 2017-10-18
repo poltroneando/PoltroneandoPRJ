@@ -8,7 +8,7 @@ html, body{
 .topo-bar{
     background-color: #ECF9FF;
     height: 50px;
-    width: 100%;
+    width: 100%;    
 }
 .navbar-brand{
     position: relative;
@@ -19,6 +19,15 @@ html, body{
 .container{
     height: 100%;
 }
+a {
+    text-decoration: none;
+    color: #FFF;
+}
+    
+a:hover {
+    color: #1a75dde7;
+}
+
 .btn-group{
     padding-top: 20px;
     color: #B9D2DE;
