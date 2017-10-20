@@ -11,7 +11,8 @@
         "guzzlehttp/guzzle": "^6.3",
         "intervention/image": "^2.4",
         "adyg/php-imgur-api-client": "^1.0",
-        "nahid/imgurx": "^1.0"
+        "nahid/imgurx": "^1.0",
+        "caouecs/laravel-lang": "^3.0"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
