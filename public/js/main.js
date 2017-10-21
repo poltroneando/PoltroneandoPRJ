@@ -15,4 +15,7 @@ $(document).ready(function(){
 		$("form").toggleClass("form-login-hide");
 		}
 	});
+	$(".profile-pic").click(function(){
+		$("#profile-picture").modal("show")
+	});
 });

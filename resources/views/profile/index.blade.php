@@ -4,7 +4,7 @@
 <div class="topo-perfil">
     <div class="profile-capa" style="background-image:url('/uploads/covers/{{ $user->capa}}'">
         <div class="profile-header">
-            <img src="{{ $user->foto }}" style="width:150px; height:150px; border-radius:10%;"></br>
+            <img src="{{ $user->foto }}" class="profile-pic" style="width:130px; height:130px; border-radius:10%;"></br>
             <a class="profile-name">
                 <span class="blockLink">{{ $user->nome }}</span>
             </a>
@@ -16,5 +16,7 @@
             </form>
         </div>
     </div>
+</div>
+<div class="modal-body" id="profile-picture">
 </div>
 @endsection
