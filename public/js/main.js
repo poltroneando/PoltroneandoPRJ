@@ -16,6 +16,6 @@ $(document).ready(function(){
 		}
 	});
 	$(".profile-pic").click(function(){
-		$("#profile-picture").modal("show")
+		$("#profile-picture").modal();
 	});
 });
