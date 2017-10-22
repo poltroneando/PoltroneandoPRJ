@@ -13,7 +13,8 @@
         "adyg/php-imgur-api-client": "^1.0",
         "nahid/imgurx": "^1.0",
         "caouecs/laravel-lang": "^3.0",
-        "ramsey/uuid": "^3.7"
+        "ramsey/uuid": "^3.7",
+        "moontoast/math": "^1.1"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

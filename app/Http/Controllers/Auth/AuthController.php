@@ -75,6 +75,8 @@ class AuthController extends Controller
             'password' => bcrypt($data['password']),
             'uuid' => Uuid::uuid1(),
         ]);
+        
+        //return dd(Uuid::uuid1());
     }
 
     public function loginFacebook()
