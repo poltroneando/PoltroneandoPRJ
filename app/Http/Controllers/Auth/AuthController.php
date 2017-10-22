@@ -9,6 +9,7 @@ use Socialite;
 use Image;
 use File;
 use DB; 
+use Ramsey\Uuid\Uuid;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 
@@ -72,7 +73,7 @@ class AuthController extends Controller
             'nome' => $data['nome'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
-            'uuid' => \Ramsey\Uuid\Uuid::uuid1(),
+            'uuid' => Uuid::uuid1(),
         ]);
     }
 
@@ -89,7 +90,7 @@ class AuthController extends Controller
                 'nome' => $userSocial->name,
                 'email' => $userSocial->email,
                 'link_facebook' => $userSocial->profileUrl,          
-                'uuid' => \Ramsey\Uuid\Uuid::uuid1(),
+                'uuid' => Uuid::uuid1(),
             ]);
             $avatar = $userSocial->avatar_original;
             $filename = time().$userSocial->id . '.jpg';  
@@ -135,7 +136,7 @@ class AuthController extends Controller
                 'nome' => $userSocial->name,
                 'email' => $userSocial->email,
                 'link_gplus' => $userSocial->user['url'],                
-                'uuid' => \Ramsey\Uuid\Uuid::uuid1(),
+                'uuid' => Uuid::uuid1(),
             ]);
             $avatar = $userSocial->avatar_original;
             $filename = time().$userSocial->id . '.jpg';  
