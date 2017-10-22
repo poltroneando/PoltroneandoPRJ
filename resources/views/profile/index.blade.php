@@ -8,12 +8,6 @@
             <a class="profile-name">
                 <span class="blockLink">{{ $user->nome }}</span>
             </a>
-            <form enctype="multipart/form-data" action="/perfil" method="POST">
-                <label>Update Profile Image</label>
-                <input type="file" name="avatar">
-                <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                <input type="submit" class="pull-right btn btn-sm btn-primary">
-            </form>
         </div>
     </div>
 </div>
@@ -25,7 +19,13 @@
                 <img src="{{ $user->foto }}" id="img-modal">
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <form enctype="multipart/form-data" action="/perfil" method="POST">
+                    <input type="file" name="avatar">
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                    <input type="submit" class="pull-right btn btn-sm btn-primary">
+                </form>
+
+                <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
             </div>
         </div>
     </div>
