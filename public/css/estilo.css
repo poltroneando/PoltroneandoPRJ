@@ -54,6 +54,10 @@
     background-position: center;
     background-attachment: local;
 }
+#img-modal{
+     border-style: solid 2px;
+     
+}
 .profile-header {
     padding: 45px 0 15px;
     position: relative;
