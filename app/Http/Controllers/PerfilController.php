@@ -17,8 +17,11 @@ class PerfilController extends Controller
     public function profile(){
 		//dd(Auth::user());
         return view('profile/index', array('user' => Auth::user()));
-    }
-     public function update_avatar(Request $request){
+	}
+	public function profile_by_uuid($uuid){
+		dd($uuid);
+	}
+    public function update_avatar(Request $request){
     	// Handle the user upload of avatar
     	if($request->hasFile('avatar')){
 			$client = new \Imgur\Client();

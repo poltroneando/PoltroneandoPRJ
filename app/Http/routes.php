@@ -18,7 +18,7 @@ Route::get('/', function () {
 Route::auth();
 Route::group(['prefix'=>'/perfil'],function(){
     Route::get('/',['middleware'=>'auth','uses'=>'PerfilController@profile']);    
-    //Route::get('/{id}',)
+    Route::get('/{uuid}','PerfilController@profile_by_uudi');
     Route::post('/', 'PerfilController@update_avatar');
     Route::get('/editar', ['middleware' => 'auth', 'uses'=>'PerfilController@editar']);
 });
