@@ -19,7 +19,7 @@ class PerfilController extends Controller
         return view('profile/index', array('user' => Auth::user()));
 	}
 	public function profile_by_uuid($uuid){
-		dd($uuid);
+		return dd($uuid);
 	}
     public function update_avatar(Request $request){
     	// Handle the user upload of avatar
