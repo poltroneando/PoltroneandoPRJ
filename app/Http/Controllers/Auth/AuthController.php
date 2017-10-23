@@ -92,7 +92,7 @@ class AuthController extends Controller
                 'nome' => $userSocial->name,
                 'email' => $userSocial->email,
                 'link_facebook' => $userSocial->profileUrl,          
-                'uuid' => Uuid::generate()->string;,
+                'uuid' => Uuid::generate()->string,
             ]);
             $avatar = $userSocial->avatar_original;
             $filename = time().$userSocial->id . '.jpg';  
@@ -138,7 +138,7 @@ class AuthController extends Controller
                 'nome' => $userSocial->name,
                 'email' => $userSocial->email,
                 'link_gplus' => $userSocial->user['url'],                
-                'uuid' => Uuid::generate()->string;,
+                'uuid' => Uuid::generate()->string,
             ]);
             $avatar = $userSocial->avatar_original;
             $filename = time().$userSocial->id . '.jpg';  
