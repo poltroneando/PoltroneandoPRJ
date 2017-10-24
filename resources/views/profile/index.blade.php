@@ -7,6 +7,7 @@
             <img src="{{ $user->foto }}" class="profile-pic" style="width:130px; height:130px; border-radius:10%;"></br>
             <a class="profile-name">
                 <span class="blockLink">{{ $user->nome }}</span>
+                <span>{{ $user->uuid }}</span>
             </a>
         </div>
     </div>
