@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use Imgurx;
+use App\Usuario;
 use Auth;
 
 class PerfilController extends Controller
@@ -20,8 +21,8 @@ class PerfilController extends Controller
 	}
 	
 	public function profile_by_uuid($uuid){
-		return view('profile/index', array('user' => Auth::user()));
-		return var_dump($uuid);
+		return view('profile/index', array('user' => Usuario::where('uuid',$uuid)->first()));
+		//return var_dump($uuid);
 	}
 
     public function update_avatar(Request $request){
