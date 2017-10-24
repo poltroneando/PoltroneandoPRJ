@@ -20,6 +20,9 @@ Route::group(['prefix'=>'/perfil'],function(){
     Route::get('/',['middleware'=>'auth','uses'=>'PerfilController@profile']);    
     Route::post('/', 'PerfilController@update_avatar');
     Route::get('/editar', ['middleware' => 'auth', 'uses'=>'PerfilController@editar']);
+    Route::get('/{uuid}',function($uuid){
+        dd($uuid);
+    });
 });
 
 Route::get('/cadastrar', function() {
