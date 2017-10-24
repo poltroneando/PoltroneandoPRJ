@@ -20,7 +20,8 @@ class PerfilController extends Controller
 	}
 
 	public function profile_by_uuid($uuid){
-		return 1; //dd($uuid);
+		echo("teste");
+		
 	}
 	
     public function update_avatar(Request $request){
