@@ -19,6 +19,10 @@ class PerfilController extends Controller
         return view('profile/index', array('user' => Auth::user()));
 	}
 	
+	public function profile_by_uuid($uuid){
+		return var_dump($uuid);
+	}
+
     public function update_avatar(Request $request){
     	// Handle the user upload of avatar
     	if($request->hasFile('avatar')){
