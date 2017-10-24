@@ -7,7 +7,6 @@
             <img src="{{ $user->foto }}" class="profile-pic" style="width:130px; height:130px; border-radius:10%;"></br>
             <a class="profile-name">
                 <span class="blockLink">{{ $user->nome }}</span>
-                <span>{{ $user->uuid }}</span>
             </a>
         </div>
     </div>
@@ -25,8 +24,9 @@
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     <input type="submit" class="btn btn-sm btn-primary">
                 </form>
-
-                <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+                @if ($user == Auth::user())
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+                @endif
             </div>
         </div>
     </div>

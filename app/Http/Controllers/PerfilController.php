@@ -20,6 +20,7 @@ class PerfilController extends Controller
 	}
 	
 	public function profile_by_uuid($uuid){
+		return view('profile/index', array('user' => Auth::user()));
 		return var_dump($uuid);
 	}
 
