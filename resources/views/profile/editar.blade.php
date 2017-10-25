@@ -19,8 +19,8 @@
         </div>
     </div>
     @endif
-    {{ csrf_field() }}
     <form class="form-horizontal" role="form" method="POST" action="{{ url('/gravar') }}">
+        {{ csrf_field() }}
         @if empty($user->password)
        <!-- <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">-->
             <label for="password" class="control-label sr-only">Senha</label>
