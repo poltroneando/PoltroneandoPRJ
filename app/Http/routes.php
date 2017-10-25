@@ -23,17 +23,17 @@ Route::group(['prefix'=>'/perfil'],function(){
     Route::get('/{uuid}','PerfilController@profile_by_uuid');
 });
 
-Route::get('/cadastrar', function() {
+Route::get('/cadastrar',['middleware'=>'guest', function() {
 	return view('auth/login',['tipo'=>'1']);
-});
+}]);
 
-Route::get('/cadastrar', function() {	
+Route::get('/cadastrar',['middleware'=>'guest', function() {	
 	return view('auth/login',['tipo'=>'1']);
-});
+}]);
 
-Route::get('/login', function() {
+Route::get('/login', ['middleware'=>'guest', function() {
 	return view('auth/login',['tipo'=>'0']);
-});
+}]);
 
 Route::get('/login/facebook', 'Auth\AuthController@loginFacebook');
 Route::get('/login/facebook/callback', 'Auth\AuthController@facebookCallback');

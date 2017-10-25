@@ -87,7 +87,7 @@
                 <li><a href="{{ url('/login') }}">Login ou Cadastrar</a></li>
                 @else
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                    <a href="{{ url('/perfil)') }}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                         {{ Auth::user()->nome }} <span class="caret"></span>
                     </a>
                 </li>
