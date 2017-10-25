@@ -35,11 +35,11 @@
             @endif
         </div>
         @endif
+        <button type="submit" class="btn btn-primary" style="background-color: #083C52;">
+            Salvar Dados
+        </button>
     
     </form>
-    <button type="submit" class="btn btn-primary" style="background-color: #083C52;">
-        Salvar Dados
-    </button>
 
 </div>
 <div class="modal fade" id="profile-picture" role="dialog">
