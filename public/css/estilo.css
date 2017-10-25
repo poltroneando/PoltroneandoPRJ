@@ -44,7 +44,8 @@
 	color: #006D93;
 }
 .topo-perfil{
-	margin-top: 0px;
+    margin-top: 0px;
+    margin-bottom: 8px;
 }
 .profile-capa {
     background-color: #23466b;
@@ -88,4 +89,8 @@
     font-weight: bold;
     margin-top: 3px;
 	text-decoration: none;
+}
+.alert-incompleto{
+    margin: 10px 20px;
+    padding: 10px;
 }

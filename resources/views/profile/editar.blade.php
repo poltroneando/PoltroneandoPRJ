@@ -13,7 +13,7 @@
 </div>
 <div class="container">
     <div class="panel">
-        <div class="alert alert-danger">
+        <div class="alert alert-danger alert-incompleto">
             <strong>Atenção!</strong> Complete as informações de seu perfil para que sua experiência no Poltroneando seja a melhor possível
         </div>
     </div>
