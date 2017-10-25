@@ -12,11 +12,35 @@
 </div>
 </div>
 <div class="container">
+    @if ($user->verificado == 0)
     <div class="panel">
         <div class="alert alert-danger alert-incompleto">
             <strong>Atenção!</strong> Complete as informações de seu perfil para que sua experiência no Poltroneando seja a melhor possível
         </div>
     </div>
+    @endif
+    {{ csrf_field() }}
+    <form class="form-horizontal" role="form" method="POST" action="{{ url('/gravar') }}">
+        @if empty($user->password)
+        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+            <label for="password" class="control-label sr-only">Senha</label>
+            <div class="input-group">
+                <span class="input-group-addon" id="addon2"><span class="glyphicon glyphicon-lock"></span></span> 
+                <input id="password" type="password" class="form-control" placeholder="Senha" name="password" aria-describedby="addon2">
+            </div>
+            @if ($errors->has('password'))
+                <span class="help-block">
+                    <strong>{{ $errors->first('password') }}</strong>
+                </span>
+            @endif
+        </div>
+        @endif
+    
+    </form>
+    <button type="submit" class="btn btn-primary" style="background-color: #083C52;">
+        Salvar Dados
+    </button>
+
 </div>
 <div class="modal fade" id="profile-picture" role="dialog">
 <div class="modal-dialog">
