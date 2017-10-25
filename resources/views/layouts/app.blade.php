@@ -76,7 +76,7 @@
 
         <!-- Branding Image -->
         <a class="navbar-brand" href="{{ url('/') }}">
-            <img src="public/imgs/marca.png" class="img-brand" alt="Poltroneando" style="max-height:35px;">
+            <img src="{{ url('public/imgs/marca.png') }}" class="img-brand" alt="Poltroneando" style="max-height:35px;">
         </a>
     </div>
 
@@ -87,7 +87,7 @@
                 <li><a href="{{ url('/login') }}">Login ou Cadastrar</a></li>
                 @else
                 <li class="dropdown">
-                    <a href="{{ url('/perfil)') }}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                    <a href="{{ url('/perfil') }}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                         {{ Auth::user()->nome }} <span class="caret"></span>
                     </a>
                 </li>
