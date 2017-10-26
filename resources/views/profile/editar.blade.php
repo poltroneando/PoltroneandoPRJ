@@ -56,7 +56,7 @@
                     <label for="nome" class="control-label sr-only">Nome</label>
                     <div class="input-group">
                         <span class="input-group-addon" id="addon2"><span class="glyphicon glyphicon-user"></span></span>                 
-                        <input id="nome" type="text" class="form-control" name="nome" placeholder="Nome" value="{{ old('nome') }}">
+                        <input id="nome" type="text" class="form-control" name="nome" placeholder="Nome" value="{{ $user->nome }}">
                     </div>
                     @if ($errors->has('nome'))
                         <span class="help-block">
