@@ -21,7 +21,7 @@
         <form class="form-horizontal" role="form" method="POST" action="{{ url('/gravar') }}">
             {{ csrf_field() }}
             @if (empty($user->password))
-            <div class="row">
+            <div class="form-row">
                 <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                     <label for="password" class="control-label sr-only">Senha</label>
                     <div class="input-group">
