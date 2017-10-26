@@ -18,7 +18,7 @@
                 <strong>Atenção!</strong> Complete as informações de seu perfil para que sua experiência no Poltroneando seja a melhor possível
             </div>
         @endif
-        <form class="form-horizontal" role="form" method="POST" action="{{ url('/gravar') }}">
+        <form role="form" method="POST" action="{{ url('/gravar') }}">
             {{ csrf_field() }}
             @if (empty($user->password))
             <div class="form-row">
@@ -34,6 +34,20 @@
                         </span>
                     @endif
                 </div>  
+            </div>
+            <div class="form-row">
+                <div class="form-group{{ $errors->has('password_confirmation') ? ' has-error' : '' }}">
+                    <label for="password-confirm" class="control-label sr-only">Confirmar Senha</label>
+                    <div class="input-group">
+                        <span class="input-group-addon" id="addon2"><span class="glyphicon glyphicon-lock"></span></span>                 
+                        <input id="password-confirm" type="password" class="form-control" placeholder="Confirmar Senha" name="password_confirmation">
+                    </div>
+                    @if ($errors->has('password_confirmation'))
+                        <span class="help-block">
+                            <strong>{{ $errors->first('password_confirmation') }}</strong>
+                        </span>
+                    @endif
+                </div>
             </div>
             @endif
             <button type="submit" class="btn btn-primary" style="background-color: #083C52;">
