@@ -19,7 +19,11 @@ class PerfilController extends Controller
 		//dd(Auth::user());
         return view('profile/index', array('user' => Auth::user()));
 	}
-	
+	public function gravar(array $data){
+		$user = Auth::user();
+		$user->password = bcrypt($data['password']);
+		$user->save();
+	}
 	public function profile_by_uuid($uuid){
 		return view('profile/index', array('user' => Usuario::where('uuid',$uuid)->firstOrFail()));
 		//return var_dump($uuid);
