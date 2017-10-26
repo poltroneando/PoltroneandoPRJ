@@ -19,7 +19,7 @@ class PerfilController extends Controller
 		//dd(Auth::user());
         return view('profile/index', array('user' => Auth::user()));
 	}
-	public function gravar(array $data){
+	public function gravar(Request $data){
 		$user = Auth::user();
 		$user->password = bcrypt($data['password']);
 		$user->save();
