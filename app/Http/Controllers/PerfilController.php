@@ -34,7 +34,7 @@ class PerfilController extends Controller
 		$user->nome = $data['nome'];
 		$user->username = $data['username'];
 		$user->save();
-		profile();
+		return view('profile/index', array('user' => Auth::user()));
 	}
 	public function profile_by_uuid($uuid){
 		return view('profile/index', array('user' => Usuario::where('uuid',$uuid)->firstOrFail()));
