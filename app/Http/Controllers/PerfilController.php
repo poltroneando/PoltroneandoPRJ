@@ -26,7 +26,7 @@ class PerfilController extends Controller
     }
     public function profile(){
 		//dd(Auth::user());
-        return view('profile/index', array('user' => Auth::user()));
+        return redirect('perfil');
 	}
 	public function gravar(Request $data){
 		$user = Auth::user();
