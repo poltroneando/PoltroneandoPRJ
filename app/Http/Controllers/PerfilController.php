@@ -26,15 +26,17 @@ class PerfilController extends Controller
     }
     public function profile(){
 		//dd(Auth::user());
-        return redirect('perfil');
+		return view('profile/index', array('user' => Auth::user()));        
 	}
 	public function gravar(Request $data){
 		$user = Auth::user();
 		$user->password = bcrypt($data['password']);
 		$user->nome = $data['nome'];
 		$user->username = $data['username'];
+		$user->validado = 1;
 		$user->save();
-		return view('profile/index', array('user' => Auth::user()));
+		return redirect('perfil');
+		
 	}
 	public function profile_by_uuid($uuid){
 		return view('profile/index', array('user' => Usuario::where('uuid',$uuid)->firstOrFail()));

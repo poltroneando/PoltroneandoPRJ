@@ -76,7 +76,7 @@ class AuthController extends Controller
             'uuid' => Uuid::generate()->string,
         ]);
         
-        //return dd(Uuid::uuid1());
+        //return redirect('perfil/editar');
     }
 
     public function loginFacebook()
