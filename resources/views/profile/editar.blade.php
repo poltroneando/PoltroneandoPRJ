@@ -21,35 +21,36 @@
         <form role="form" method="POST" action="{{ url('/perfil/gravar') }}">
             {{ csrf_field() }}
             @if (empty($user->password))
-            <div class="form-row">
-                <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                    <label for="password" class="control-label sr-only">Senha</label>
-                    <div class="input-group">
-                        <span class="input-group-addon" id="addon2"><span class="glyphicon glyphicon-lock"></span></span> 
-                        <input id="password" type="password" class="form-control" placeholder="Senha" name="password" aria-describedby="addon2">
-                    </div>
-                    @if ($errors->has('password'))
-                        <span class="help-block">
-                            <strong>{{ $errors->first('password') }}</strong>
-                        </span>
-                    @endif
-                </div>  
-            </div>
-            @endif
-            <div class="form-row">
-                <div class="form-group{{ $errors->has('password_confirmation') ? ' has-error' : '' }}">
-                    <label for="password-confirm" class="control-label sr-only">Confirmar Senha</label>
-                    <div class="input-group">
-                        <span class="input-group-addon" id="addon2"><span class="glyphicon glyphicon-lock"></span></span>                 
-                        <input id="password-confirm" type="password" class="form-control" placeholder="Confirmar Senha" name="password_confirmation">
-                    </div>
-                    @if ($errors->has('password_confirmation'))
-                        <span class="help-block">
-                            <strong>{{ $errors->first('password_confirmation') }}</strong>
-                        </span>
-                    @endif
+                <div class="form-row">
+                    <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+                        <label for="password" class="control-label sr-only">Senha</label>
+                        <div class="input-group">
+                            <span class="input-group-addon" id="addon2"><span class="glyphicon glyphicon-lock"></span></span> 
+                            <input id="password" type="password" class="form-control" placeholder="Senha" name="password" aria-describedby="addon2">
+                        </div>
+                        @if ($errors->has('password'))
+                            <span class="help-block">
+                                <strong>{{ $errors->first('password') }}</strong>
+                            </span>
+                        @endif
+                    </div>  
                 </div>
-            </div>
+                
+                <div class="form-row">
+                    <div class="form-group{{ $errors->has('password_confirmation') ? ' has-error' : '' }}">
+                        <label for="password-confirm" class="control-label sr-only">Confirmar Senha</label>
+                        <div class="input-group">
+                            <span class="input-group-addon" id="addon2"><span class="glyphicon glyphicon-lock"></span></span>                 
+                            <input id="password-confirm" type="password" class="form-control" placeholder="Confirmar Senha" name="password_confirmation">
+                        </div>
+                        @if ($errors->has('password_confirmation'))
+                            <span class="help-block">
+                                <strong>{{ $errors->first('password_confirmation') }}</strong>
+                            </span>
+                        @endif
+                    </div>
+                </div>
+            @endif
             <div class="form-row">
                 <div class="form-group{{ $errors->has('nome') ? ' has-error' : '' }}">
                     <label for="nome" class="control-label sr-only">Nome</label>
