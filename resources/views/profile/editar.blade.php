@@ -35,6 +35,7 @@
                     @endif
                 </div>  
             </div>
+            @endif
             <div class="form-row">
                 <div class="form-group{{ $errors->has('password_confirmation') ? ' has-error' : '' }}">
                     <label for="password-confirm" class="control-label sr-only">Confirmar Senha</label>
@@ -49,7 +50,34 @@
                     @endif
                 </div>
             </div>
-            @endif
+            <div class="form-row">
+                <div class="form-group{{ $errors->has('nome') ? ' has-error' : '' }}">
+                    <label for="nome" class="control-label sr-only">Nome</label>
+                    <div class="input-group">
+                        <span class="input-group-addon" id="addon2"><span class="glyphicon glyphicon-user"></span></span>                 
+                        <input id="nome" type="text" class="form-control" name="nome" placeholder="Nome" value="{{ old('nome') }}">
+                    </div>
+                    @if ($errors->has('nome'))
+                        <span class="help-block">
+                            <strong>{{ $errors->first('nome') }}</strong>
+                        </span>
+                    @endif
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group{{ $errors->has('username') ? ' has-error' : '' }}">
+                    <label for="nome" class="control-label sr-only">Username</label>
+                    <div class="input-group">
+                        <span class="input-group-addon" id="addon2"><span class="glyphicon glyphicon-user"></span></span>                 
+                        <input id="nome" type="text" class="form-control" name="username" placeholder="Username" value="{{ old('username') }}">
+                    </div>
+                    @if ($errors->has('username'))
+                        <span class="help-block">
+                            <strong>{{ $errors->first('username') }}</strong>
+                        </span>
+                    @endif
+                </div>
+            </div>
             <button type="submit" class="btn btn-primary" style="background-color: #083C52;">
                 Salvar Dados
             </button>    

@@ -14,6 +14,15 @@ class PerfilController extends Controller
 	public function __construct()
     {
         //$this->middleware('auth');
+	}
+	protected function validator(array $data)
+    {
+        return Validator::make($data, [
+            'nome' => 'required|max:255',
+			'password' => 'required|min:6|confirmed',
+			'username' => 'max:60|unique|alpha_num',
+			'data_nascimento' => 'date',
+        ]);
     }
     public function profile(){
 		//dd(Auth::user());
@@ -22,7 +31,10 @@ class PerfilController extends Controller
 	public function gravar(Request $data){
 		$user = Auth::user();
 		$user->password = bcrypt($data['password']);
+		$user->nome = $data['nome'];
+		$user->username = $data['username'];
 		$user->save();
+		profile();
 	}
 	public function profile_by_uuid($uuid){
 		return view('profile/index', array('user' => Usuario::where('uuid',$uuid)->firstOrFail()));
