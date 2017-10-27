@@ -23,6 +23,8 @@ Route::group(['prefix'=>'/perfil'],function(){
     Route::get('/editar', ['middleware' => 'auth', 'uses'=>'PerfilController@editar']);
     Route::get('/{uuid}','PerfilController@profile_by_uuid');
 });
+//Route::group(['prefix'=>'/noticias'],function(){
+//});
 
 Route::get('/cadastrar',['middleware'=>'guest', function() {
 	return view('auth/login',['tipo'=>'1']);
