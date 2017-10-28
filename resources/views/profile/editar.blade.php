@@ -81,8 +81,8 @@
             </div>
             <div class="form-row">
                 <div class="form-group">
-                    <label for="genero" class="control-label">Gênero</label>
-                    <select name="genero" class="form-control"> 
+                    <label for="genero" class="control-label sr-only">Gênero</label>
+                    <select name="genero" class="form-control" title="Gênero"> 
                         <option value="1">Masculino</option>
                         <option value="2">Feminino</option>
                         <option value="3">Outro</option>
