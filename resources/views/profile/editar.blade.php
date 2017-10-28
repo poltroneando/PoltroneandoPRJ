@@ -81,8 +81,13 @@
             </div>
             <div class="form-row">
                 <div class="form-group">
-                    <label for="genero" class="control-label sr-only">Genero</label>
-                    {{ Form::select('genero', ['Masculino', 'Feminino', 'Outro', 'Prefiro não declarar']) }}
+                    <label for="genero" class="control-label sr-only">Gênero</label>
+                    <select name="genero"> 
+                        <option value="1">Masculino</option>
+                        <option value="2">Feminino</option>
+                        <option value="3">Outro</option>
+                        <option value="4">Prefiro não declarar</option>                        
+                    </select>
                 </div>
             </div>
             <button type="submit" class="btn btn-primary" style="background-color: #083C52;">
