@@ -18,7 +18,7 @@
                 <strong>Atenção!</strong> Complete as informações de seu perfil para que sua experiência no Poltroneando seja a melhor possível
             </div>
         @endif
-        <form role="form" method="POST" action="{{ url('/perfil/gravar') }}">
+        <form role="form" class="form-horizontal" method="POST" action="{{ url('/perfil/gravar') }}">
             {{ csrf_field() }}
             @if (empty($user->password))
                 <div class="form-row">
