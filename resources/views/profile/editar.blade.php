@@ -79,6 +79,12 @@
                     @endif
                 </div>
             </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="genero" class="control-label sr-only">Genero</label>
+                    {{ Form::select('genero', ['Masculino', 'Feminino', 'Outro', 'Prefiro não declarar']) }}
+                </div>
+            </div>
             <button type="submit" class="btn btn-primary" style="background-color: #083C52;">
                 Salvar Dados
             </button>    
