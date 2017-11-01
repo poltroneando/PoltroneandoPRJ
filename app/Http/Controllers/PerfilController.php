@@ -43,7 +43,7 @@ class PerfilController extends Controller
 		
 	}
 	public function profile_by_uuid($uuid){
-		return view('profile/index', array('user' => Usuario::where('uuid',$uuid)->firstOrFail()));
+		return view('profile/index', array('user' => Usuario::where('uuid',$uuid)->orwhere('username',$uuid)->firstOrFail()));
 		//return var_dump($uuid);
 	}
 
