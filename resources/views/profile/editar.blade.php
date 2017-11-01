@@ -86,6 +86,12 @@
                     <input id="data_nascimento" type="date" class="form-control" name="data_nascimento" value="{{ old('data_nascimento') }}">
                 </div>
             </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="biografia" class="control-label">Bio</label>
+                    <input id="biografia" type="textarea" class="form-control" name="biografia" value="{{ old('biografia') }}">
+                </div>
+            </div>
             <button id="btn-salvar" type="submit" class="btn btn-primary" style="background-color: #083C52;">
                 Salvar Dados
             </button>    

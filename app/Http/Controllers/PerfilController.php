@@ -22,6 +22,7 @@ class PerfilController extends Controller
 			'password' => 'required|min:6|confirmed',
 			'username' => 'max:60|unique|alpha_num',
 			'data_nascimento' => 'date',
+			'biografia' => 'max:255',
         ]);
     }
     public function profile(){
@@ -33,6 +34,9 @@ class PerfilController extends Controller
 		$user->password = bcrypt($data['password']);
 		$user->nome = $data['nome'];
 		$user->username = $data['username'];
+		$user->genero = $data['genero'];
+		$user->data_nascimento = $data['data_nascimento'];
+		$user->biografia = $data['biografia'];
 		$user->validado = 1;
 		$user->save();
 		return redirect('perfil');
