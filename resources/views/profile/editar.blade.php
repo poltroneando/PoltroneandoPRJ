@@ -48,9 +48,7 @@
             <div class="form-row">
                 <div class="form-group{{ $errors->has('nome') ? ' has-error' : '' }}">
                     <label for="nome" class="control-label">Nome</label>
-                    <div class="input-group">
-                        <input id="nome" type="text" class="form-control" name="nome" value="{{ $user->nome }}">
-                    </div>
+                    <input id="nome" type="text" class="form-control" name="nome" value="{{ $user->nome }}">
                     @if ($errors->has('nome'))
                         <span class="help-block">
                             <strong>{{ $errors->first('nome') }}</strong>
