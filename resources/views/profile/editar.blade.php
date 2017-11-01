@@ -25,7 +25,6 @@
                     <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                         <label for="password" class="control-label">Senha</label>
                         <div class="input-group">
-                            <span class="input-group-addon" id="addon2"><span class="glyphicon glyphicon-lock"></span></span> 
                             <input id="password" type="password" class="form-control" name="password" aria-describedby="addon2">
                         </div>
                         @if ($errors->has('password'))
@@ -40,7 +39,6 @@
                     <div class="form-group{{ $errors->has('password_confirmation') ? ' has-error' : '' }}">
                         <label for="password-confirm" class="control-label">Confirmar Senha</label>
                         <div class="input-group">
-                            <span class="input-group-addon" id="addon2"><span class="glyphicon glyphicon-lock"></span></span>                 
                             <input id="password-confirm" type="password" class="form-control" name="password_confirmation">
                         </div>
                         @if ($errors->has('password_confirmation'))
@@ -55,7 +53,6 @@
                 <div class="form-group{{ $errors->has('nome') ? ' has-error' : '' }}">
                     <label for="nome" class="control-label">Nome</label>
                     <div class="input-group">
-                        <span class="input-group-addon" id="addon2"><span class="glyphicon glyphicon-user"></span></span>                 
                         <input id="nome" type="text" class="form-control" name="nome" value="{{ $user->nome }}">
                     </div>
                     @if ($errors->has('nome'))
@@ -69,8 +66,7 @@
             <div class="form-row">
                 <div class="form-group{{ $errors->has('username') ? ' has-error' : '' }}">
                     <label for="nome" class="control-label">Username</label>
-                    <div class="input-group">
-                        <span class="input-group-addon" id="addon2"><span class="glyphicon glyphicon-user"></span></span>                 
+                    <div class="input-group">                 
                         <input id="nome" type="text" class="form-control" name="username" value="{{ old('username') }}">
                     </div>
                     @if ($errors->has('username'))
@@ -81,9 +77,9 @@
                 </div>
             </div>
             @endif
-            <div class="form-row">
+            <div class="form-row-half">
                 <div class="form-group">
-                    <label for="genero" class="control-label sr-only">Gênero</label>
+                    <label for="genero" class="control-label">Gênero</label>
                     <select name="genero" class="form-control" title="Gênero"> 
                         <option value="1">Masculino</option>
                         <option value="2">Feminino</option>
