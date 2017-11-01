@@ -89,7 +89,7 @@
             <div class="form-row">
                 <div class="form-group">
                     <label for="biografia" class="control-label">Bio</label>
-                    <textarea id="biografia" type="textarea" class="form-control" name="biografia" value="{{ old('biografia') }}">
+                    <textarea id="biografia" type="textarea" class="form-control" name="biografia" value="{{ old('biografia') }}"></textarea>
                 </div>
             </div>
             <button id="btn-salvar" type="submit" class="btn btn-primary" style="background-color: #083C52;">
