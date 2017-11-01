@@ -80,18 +80,13 @@
                     </select>
                 </div>
             </div>
-           <!-- <div class="form-row">
+            <div class="form-row-half">
                 <div class="form-group">
-                    <label for="genero" class="control-label sr-only">Gênero</label>
-                    <select name="genero" class="form-control" title="Gênero"> 
-                        <option value="1">Masculino</option>
-                        <option value="2">Feminino</option>
-                        <option value="3">Outro</option>
-                        <option value="4">Prefiro não declarar</option>                        
-                    </select>
+                    <label for="data_nascimento" class="control-label">Data de Nascimento</label>
+                    <input id="data_nascimento" type="date" class="form-control" name="data_nascimento" value="{{ old('data_nascimento') }}">
                 </div>
-            </div>-->
-            <button type="submit" class="btn btn-primary" style="background-color: #083C52;">
+            </div>
+            <button id="btn-salvar" type="submit" class="btn btn-primary" style="background-color: #083C52;">
                 Salvar Dados
             </button>    
         </form>
