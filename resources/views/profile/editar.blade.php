@@ -24,9 +24,7 @@
                 <div class="form-row">
                     <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                         <label for="password" class="control-label">Senha</label>
-                        <div class="input-group">
-                            <input id="password" type="password" class="form-control" name="password" aria-describedby="addon2">
-                        </div>
+                        <input id="password" type="password" class="form-control" name="password" aria-describedby="addon2">
                         @if ($errors->has('password'))
                             <span class="help-block">
                                 <strong>{{ $errors->first('password') }}</strong>
@@ -38,9 +36,7 @@
                 <div class="form-row">
                     <div class="form-group{{ $errors->has('password_confirmation') ? ' has-error' : '' }}">
                         <label for="password-confirm" class="control-label">Confirmar Senha</label>
-                        <div class="input-group">
-                            <input id="password-confirm" type="password" class="form-control" name="password_confirmation">
-                        </div>
+                        <input id="password-confirm" type="password" class="form-control" name="password_confirmation">
                         @if ($errors->has('password_confirmation'))
                             <span class="help-block">
                                 <strong>{{ $errors->first('password_confirmation') }}</strong>
@@ -66,9 +62,7 @@
             <div class="form-row">
                 <div class="form-group{{ $errors->has('username') ? ' has-error' : '' }}">
                     <label for="nome" class="control-label">Username</label>
-                    <div class="input-group">                 
-                        <input id="nome" type="text" class="form-control" name="username" value="{{ old('username') }}">
-                    </div>
+                    <input id="nome" type="text" class="form-control" name="username" value="{{ old('username') }}">
                     @if ($errors->has('username'))
                         <span class="help-block">
                             <strong>{{ $errors->first('username') }}</strong>
