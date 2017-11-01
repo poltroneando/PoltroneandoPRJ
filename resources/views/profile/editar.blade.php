@@ -23,10 +23,10 @@
             @if (empty($user->password))
                 <div class="form-row">
                     <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                        <label for="password" class="control-label sr-only">Senha</label>
+                        <label for="password" class="control-label">Senha</label>
                         <div class="input-group">
                             <span class="input-group-addon" id="addon2"><span class="glyphicon glyphicon-lock"></span></span> 
-                            <input id="password" type="password" class="form-control" placeholder="Senha" name="password" aria-describedby="addon2">
+                            <input id="password" type="password" class="form-control" name="password" aria-describedby="addon2">
                         </div>
                         @if ($errors->has('password'))
                             <span class="help-block">
@@ -38,10 +38,10 @@
                 
                 <div class="form-row">
                     <div class="form-group{{ $errors->has('password_confirmation') ? ' has-error' : '' }}">
-                        <label for="password-confirm" class="control-label sr-only">Confirmar Senha</label>
+                        <label for="password-confirm" class="control-label">Confirmar Senha</label>
                         <div class="input-group">
                             <span class="input-group-addon" id="addon2"><span class="glyphicon glyphicon-lock"></span></span>                 
-                            <input id="password-confirm" type="password" class="form-control" placeholder="Confirmar Senha" name="password_confirmation">
+                            <input id="password-confirm" type="password" class="form-control" name="password_confirmation">
                         </div>
                         @if ($errors->has('password_confirmation'))
                             <span class="help-block">
@@ -53,10 +53,10 @@
             @endif
             <div class="form-row">
                 <div class="form-group{{ $errors->has('nome') ? ' has-error' : '' }}">
-                    <label for="nome" class="control-label sr-only">Nome</label>
+                    <label for="nome" class="control-label">Nome</label>
                     <div class="input-group">
                         <span class="input-group-addon" id="addon2"><span class="glyphicon glyphicon-user"></span></span>                 
-                        <input id="nome" type="text" class="form-control" name="nome" placeholder="Nome" value="{{ $user->nome }}">
+                        <input id="nome" type="text" class="form-control" name="nome" value="{{ $user->nome }}">
                     </div>
                     @if ($errors->has('nome'))
                         <span class="help-block">
@@ -65,12 +65,13 @@
                     @endif
                 </div>
             </div>
+            @if (empty($user->username))
             <div class="form-row">
                 <div class="form-group{{ $errors->has('username') ? ' has-error' : '' }}">
-                    <label for="nome" class="control-label sr-only">Username</label>
+                    <label for="nome" class="control-label">Username</label>
                     <div class="input-group">
                         <span class="input-group-addon" id="addon2"><span class="glyphicon glyphicon-user"></span></span>                 
-                        <input id="nome" type="text" class="form-control" name="username" placeholder="Username" value="{{ old('username') }}">
+                        <input id="nome" type="text" class="form-control" name="username" value="{{ old('username') }}">
                     </div>
                     @if ($errors->has('username'))
                         <span class="help-block">
@@ -79,6 +80,7 @@
                     @endif
                 </div>
             </div>
+            @endif
             <div class="form-row">
                 <div class="form-group">
                     <label for="genero" class="control-label sr-only">Gênero</label>
@@ -90,6 +92,17 @@
                     </select>
                 </div>
             </div>
+           <!-- <div class="form-row">
+                <div class="form-group">
+                    <label for="genero" class="control-label sr-only">Gênero</label>
+                    <select name="genero" class="form-control" title="Gênero"> 
+                        <option value="1">Masculino</option>
+                        <option value="2">Feminino</option>
+                        <option value="3">Outro</option>
+                        <option value="4">Prefiro não declarar</option>                        
+                    </select>
+                </div>
+            </div>-->
             <button type="submit" class="btn btn-primary" style="background-color: #083C52;">
                 Salvar Dados
             </button>    
