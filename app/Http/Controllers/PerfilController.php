@@ -37,7 +37,7 @@ class PerfilController extends Controller
 		$user->genero = $data['genero'];
 		$user->data_nascimento = $data['data_nascimento'];
 		$user->biografia = $data['biografia'];
-		$user->validado = 1;
+		$user->verificado = 1;
 		$user->save();
 		return redirect('perfil');
 		
