@@ -49,7 +49,7 @@
                     </a></li>
                 <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
                 @endif
-                <li><a href="#">Item 3</a></li>
+                <li><a href="{{ url('/noticias') }}">Notícias</a></li>
                 <li><a href="#">Item 4</a></li>
                 <li><a href="#">Item 5</a></li>
                 <li><a href="#">Item 6</a></li>
