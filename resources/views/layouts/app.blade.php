@@ -44,10 +44,10 @@
                 @if (Auth::guest())
                 <li><a href="{{ url('/login') }}">Login ou Cadastrar</a></li>
                 @else
-                <li class="dropdown"><a href="{{ url('/perfil') }}">
-                        {{ Auth::user()->nome }} <span class="caret" data-toggle="dropdown" ></span>
+                <li><a href="{{ url('/perfil') }}">
+                        {{ Auth::user()->nome }} <span class="caret"></span>
                     </a>
-                    <ul class="dropdown-menu" role="menu">
+                    <ul>
                         <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
                     </ul>
                 </li>
