@@ -21,10 +21,11 @@ Route::group(['prefix'=>'/perfil'],function(){
     Route::post('/', ['middleware'=>'auth','uses'=>'PerfilController@update_avatar']);
     Route::post('/gravar', ['middleware'=>'auth','uses'=>'PerfilController@gravar']);
     Route::get('/editar', ['middleware' => 'auth', 'uses'=>'PerfilController@editar']);
-    Route::get('/{uuid}','PerfilController@profile_by_uuid');
+    Route::get('/{uuid}','PerfilController@show');
 });
-//Route::group(['prefix'=>'/noticias'],function(){
-//});
+Route::group(['prefix'=>'/noticias'],function(){
+    Route::get('/','NoticiaController@listar');
+});
 
 Route::get('/cadastrar',['middleware'=>'guest', function() {
 	return view('auth/login',['tipo'=>'1']);

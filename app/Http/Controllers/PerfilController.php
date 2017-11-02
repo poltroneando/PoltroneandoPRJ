@@ -11,12 +11,10 @@ use Auth;
 
 class PerfilController extends Controller
 {
-	public function __construct()
-    {
+	public function __construct(){
         //$this->middleware('auth');
 	}
-	protected function validator(array $data)
-    {
+	protected function validator(array $data){
         return Validator::make($data, [
             'nome' => 'required|max:255',
 			'password' => 'required|min:6|confirmed',
@@ -42,7 +40,7 @@ class PerfilController extends Controller
 		return redirect('perfil');
 		
 	}
-	public function profile_by_uuid($uuid){
+	public function show($uuid){
 		return view('profile/index', array('user' => Usuario::where('uuid',$uuid)->orwhere('username',$uuid)->firstOrFail()));
 		//return var_dump($uuid);
 	}

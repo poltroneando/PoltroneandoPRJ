@@ -26,4 +26,12 @@ class Usuario extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+    public function solicitacao()
+    {
+        return $this->hasMany('App\Amigos','id_solicitante');
+    }
+    public function requisicao()
+    {
+        return $this->hasMany('App\Amigos','id_socilitado');
+    }
 }
