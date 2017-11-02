@@ -8,7 +8,12 @@
     border: 0px;
     width: 100%;
 }
-
+.listaNav > li > ul {
+    padding: 0em 0em 0em 1em;
+}
+.listaNav > li > ul > li {
+    margin: 2px 2em 2px 0em;
+}
 .navbar-font,.navbar-font a{
 	color: orange;
 }
