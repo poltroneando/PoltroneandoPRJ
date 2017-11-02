@@ -90,6 +90,9 @@
     margin-top: 3px;
 	text-decoration: none;
 }
+.container{
+    margin-top: 5px;
+}
 .alert-incompleto{
     margin: 10px 20px;
     padding: 10px;

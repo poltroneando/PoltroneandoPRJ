@@ -7,6 +7,9 @@
             <img src="{{ $user->foto }}" class="profile-pic" style="width:130px; height:130px; border-radius:10%;"></br>
             <a class="profile-name">
                 <span class="blockLink">{{ $user->nome }}</span>
+                @if (empty($user->password) == 0)
+                <p class="small">@{{ $user->username }}<p>
+                @endif
             </a>
         </div>
     </div>
