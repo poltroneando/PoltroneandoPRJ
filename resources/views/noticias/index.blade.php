@@ -8,4 +8,5 @@
         @endforeach
     </div>
 </div>
+{{$news->links()}}
 @endsection
