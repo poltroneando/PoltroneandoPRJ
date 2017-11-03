@@ -15,6 +15,17 @@
     </div>
 </div>
 <div class="container">
+    <div class="btn-group btn-group-justified">
+        <a href="#" class="btn btn-primary">Histórico</a>
+        <a href="#" class="btn btn-primary">Info</a>
+        <a href="#" class="btn btn-primary">Amigos</a>
+        <a href="#" class="btn btn-primary">Favoritos</a>
+        <a href="#" class="btn btn-primary">Críticas</a>
+        <a href="#" class="btn btn-primary">Listas</a>
+        <a href="#" class="btn btn-primary">Conquistas</a>
+    </div>
+</div>
+<div class="container">
     <div class="panel">
     </div>
 </div>
