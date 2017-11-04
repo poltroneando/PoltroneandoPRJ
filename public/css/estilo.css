@@ -124,9 +124,8 @@ a:hover {
     margin-bottom: 10px;
     margin-left: 15px;
 }
-.pagination>li>span{
-    padding: 6px 8px;
-    
+.pagination>li>a, .pagination>li>span{
+    padding: 6px 8px;    
 }
 .pagination{
     justify-content: center;
