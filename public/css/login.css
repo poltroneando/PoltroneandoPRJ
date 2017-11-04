@@ -1,33 +1,6 @@
-html, body{
-    height: 100%;
-    background-image: url("../imgs/paper.jpeg");
-    background-size: cover;
-    background-position: center;
-    
-}
-.topo-bar{
-    background-color: #ECF9FF;
-    height: 50px;
-    width: 100%;    
-}
-.navbar-brand{
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
-    margin-top: -5px;
-}
 .container{
     height: 100%;
 }
-a {
-    text-decoration: none;
-    color: #FFF;
-}
-    
-a:hover {
-    color: #1a75dde7;
-}
-
 .btn-group{
     padding-top: 20px;
     color: #B9D2DE;

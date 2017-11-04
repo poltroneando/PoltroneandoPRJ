@@ -1,5 +1,29 @@
+html, body{
+    height: 100%;
+    background-image: url("../imgs/paper.jpeg");
+    background-size: cover;
+    background-position: center;    
+}
 .img-login{
 	margin-bottom: 25px;
+}
+a {
+    text-decoration: none;
+    color: #FFF;
+}
+a:hover {
+    color: #1a75dde7;
+}
+.topo-bar{
+    background-color: #ECF9FF;
+    height: 50px;
+    width: 100%;
+}
+.navbar-brand{
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: -5px;
 }
 .navbar {
 	background-color: #ECF9FF;
