@@ -128,7 +128,12 @@ a:hover {
     padding: 6px 8px;    
 }
 .pagination{
-    justify-content: center;
+    padding-left: 20%;
+}
+subtitle{
+    border-bottom: solid;
+    color: #083c52;
+    padding: 3px 0px 2px;
 }
 
 @media only screen and (max-width: 800px) {
@@ -137,5 +142,8 @@ a:hover {
         margin-right: 30px;
         width: auto;
         float: none;
+    }
+    .pagination{
+        padding-left: 0;
     }
 }    
