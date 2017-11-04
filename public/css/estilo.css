@@ -124,6 +124,14 @@ a:hover {
     margin-bottom: 10px;
     margin-left: 15px;
 }
+.pagination>li>span{
+    padding: 6px 8px;
+    
+}
+.pagination{
+    justify-content: center;
+}
+
 @media only screen and (max-width: 800px) {
     .form-row-half{
         margin-left: 30px;

@@ -6,7 +6,9 @@
         @foreach ($news as $noticia)
             <p> {{ $noticia->title }} </p>  
         @endforeach
-        {{$news->links()}}
+        <div class="text-center">
+            {{$news->links()}}
+        </div>
     </div>    
 </div>
 
