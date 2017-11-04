@@ -6,12 +6,18 @@
     color: #B9D2DE;
     padding-bottom: 30px;
 }
+.form-login-hide{
+	display: none;
+}
 .btn1{
     background-color: transparent;
     border-top: none;
     border-left: none;
     border-right: none;
     border-bottom: none;
+}
+.btn-link{
+    color: #FFF;
 }
 .active{
     border-bottom: solid;

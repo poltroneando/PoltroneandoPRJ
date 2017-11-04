@@ -38,9 +38,6 @@ a:hover {
 .listaNav > li > ul > li {
     margin: 0px;
 }
-.navbar-font,.navbar-font a{
-	color: orange;
-}
 
 .navbar-header{
     position: relative;
@@ -49,17 +46,6 @@ a:hover {
     max-height: 35px;
 }
 
-.form-login-hide{
-	display: none;
-}
-#btn-login, #btn-cadast {
-	background-color: #083C52;
-	color : white;
-}
-#btn-login.active, #btn-cadast.active{
-	background-color: white;
-	color : #083C52;
-}
 .form{
 	margin-top: 30px;
 }
@@ -69,9 +55,7 @@ a:hover {
 .navbar-font .navbar-toggle .icon-bar {
     background-color: #888;
 }
-.input-group-addon .glyphicon{
-	color: #006D93;
-}
+
 .topo-perfil{
     margin-top: 0px;
     margin-bottom: 8px;
