@@ -135,7 +135,7 @@ a:hover {
     color: #083c52;
     padding: 3px 0px 2px;
 }
-.menu-opcao>a, .menu-opcao>button{
+.menu-opcao>a, .menu-opcao button{
     background-color: white;
     color: #083C52;
     border: solid 1px;    
@@ -149,7 +149,7 @@ a:hover {
 .noticia{
     margin: 10px 20px 0px;
 }
-.noticia>img{
+.noticia img{
     width: 100%;
     height: auto;
     display: block;

@@ -11,7 +11,10 @@
             <a href="">
                 <img src="data:image/jpeg;base64,{{base64_encode($noticia->image)}}" alt="{{$noticia->title}}">
             </a>
-            <p> {{ $noticia->title }} </p>  
+            <p><strong>{{ $noticia->title }}</strong></p> 
+            @if (empty($noticia->subtitle) == 0) 
+                <p>{{$noticia->subtitle}}</p>
+            @endif
         </div>
         @endforeach
         <div class="text-center">
