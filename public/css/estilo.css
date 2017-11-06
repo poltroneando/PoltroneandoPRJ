@@ -148,8 +148,16 @@ a:hover {
 }
 .noticia{
     margin: 10px 20px 0px;
+    border-bottom: solid 2px gray;
+}
+.titulo-noticia{
+    color: #083C52;
+}
+.noticia>p{
+    margin: 0px;
 }
 .noticia img{
+    border-radius: 10px;
     width: 100%;
     height: auto;
     display: block;
