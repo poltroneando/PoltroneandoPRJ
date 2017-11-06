@@ -10,7 +10,7 @@ use App\Noticia;
 class NoticiaController extends Controller
 {
     public function listar(){        
-        $news = Noticia::orderBy('date_and_time', 'desc')->paginate(15);
+        $news = Noticia::orderBy('time_and_date', 'desc')->paginate(15);
         return view('noticias/index', ['news' => $news]);
 
     }
