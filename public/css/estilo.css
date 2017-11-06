@@ -146,6 +146,16 @@ a:hover {
 .menu-opcao>.fs{
     display: table-cell;
 }
+.noticia{
+    margin: 10px 20px 0px;
+}
+.noticia>img{
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
 @media only screen and (max-width: 800px) {
     .form-row-half{
         margin-left: 30px;

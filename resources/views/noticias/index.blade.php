@@ -9,7 +9,7 @@
         @foreach ($news as $noticia)
         <div class="noticia">
             <a href="">
-                <img src="{{$noticia->image}}" alt="{{$noticia->title}}">
+                <img src="data:image/jpeg;base64,{{base64_encode($noticia->image)}}" alt="{{$noticia->title}}">
             </a>
             <p> {{ $noticia->title }} </p>  
         </div>
