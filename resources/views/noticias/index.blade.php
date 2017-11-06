@@ -11,7 +11,7 @@
             <a href="">
                 <img src="data:image/jpeg;base64,{{base64_encode($noticia->image)}}" alt="{{$noticia->title}}">
             </a>
-            <p><small>Por {{ $noticia->site_origem->name }} às {{$noticia->time_and_date}}</small></p>
+            <p class="origem-noticia"><small>Por {{ $noticia->site_origem->name }} em {{$noticia->time_and_date}}</small></p>
             <p class="titulo-noticia"><strong>{{ $noticia->title }}</strong></p> 
             @if (empty($noticia->subtitle) == 0) 
                 <p>{{$noticia->subtitle}}</p>
