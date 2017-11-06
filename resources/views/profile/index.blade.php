@@ -15,14 +15,24 @@
     </div>
 </div>
 <div class="container">
-    <div class="btn-group btn-group-justified">
+    <div class="btn-group btn-group-justified menu-opcao">
         <a href="#" class="btn btn-primary">Histórico</a>
         <a href="#" class="btn btn-primary">Info</a>
         <a href="#" class="btn btn-primary">Amigos</a>
         <a href="#" class="btn btn-primary">Favoritos</a>
-        <a href="#" class="btn btn-primary">Críticas</a>
-        <a href="#" class="btn btn-primary">Listas</a>
-        <a href="#" class="btn btn-primary">Conquistas</a>
+        <a href="#" class="btn btn-primary fs">Críticas</a>
+        <a href="#" class="btn btn-primary fs">Listas</a>
+        <a href="#" class="btn btn-primary fs">Conquistas</a>        
+        <div class="btn-group s650">
+            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu">
+                <li><a href="#">Críticas</a></li>
+                <li><a href="#">Listas</a></li>
+                <li><a href="#">Conquistas</a></li>
+            </ul>
+        </div> 
     </div>
 </div>
 <div class="container">

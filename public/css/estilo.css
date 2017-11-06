@@ -135,7 +135,17 @@ a:hover {
     color: #083c52;
     padding: 3px 0px 2px;
 }
-
+.menu-opcao>a{
+    background-color: white;
+    color: #083C52;
+    border: solid 1px;    
+}
+.menu-opcao>.s650{
+    display: none;
+}    
+.menu-opcao>fs{
+    display: table-cell;
+}
 @media only screen and (max-width: 800px) {
     .form-row-half{
         margin-left: 30px;
@@ -147,3 +157,11 @@ a:hover {
         padding-left: 0;
     }
 }    
+@media only screen and (max-width: 650px) {
+    .menu-opcao>.s650{
+        display: table-cell;
+    }    
+    .menu-opcao>fs{
+        display: none;
+    }
+}

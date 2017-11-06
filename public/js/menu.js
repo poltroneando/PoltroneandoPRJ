@@ -25,8 +25,7 @@ function menu() {
 //Menu Sidebar
 $(window).resize(function() {
     var tamanhoJanela = $(window).width();
-    $(".nav-toggle").remove();
-    
+    $(".nav-toggle").remove();    
     if (tamanhoJanela < 800) { 
         $('.nav').css('left', '-175px').addClass('side-fechado');
     $('.nav').append( "<div class='nav-toggle'><span class='ico-bar'></span><span class='ico-bar'></span><span class='ico-bar'></span></div>" );
