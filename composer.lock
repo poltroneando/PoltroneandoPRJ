@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "c6ca55d586cd17dbe1544bf76cd1c8b9",
+    "content-hash": "26f07a54ddc7741dcbad8d3333cf119e",
     "packages": [
         {
             "name": "adyg/php-imgur-api-client",

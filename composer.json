@@ -13,7 +13,8 @@
         "adyg/php-imgur-api-client": "^1.0",
         "nahid/imgurx": "^1.0",
         "caouecs/laravel-lang": "^3.0",
-        "webpatser/laravel-uuid": "^2.2"
+        "webpatser/laravel-uuid": "^2.2",
+        "nesbot/carbon": "^1.22"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
