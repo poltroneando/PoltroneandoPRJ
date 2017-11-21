@@ -153,6 +153,9 @@ a:hover {
 .noticia{
     margin: 10px 20px 0px;
     border-bottom: solid 2px gray;
+    max-width: 290px;
+    height: 280px;
+    float: left;
 }
 .titulo-noticia{
     color: #083C52;
@@ -194,4 +197,12 @@ a:hover {
     .menu-opcao>.fs{
         display: none;
     }
+}
+@media only screen and (max-width: 700px){
+    .noticia{
+        max-width: none;
+        height: auto;
+    }
+    
+
 }
