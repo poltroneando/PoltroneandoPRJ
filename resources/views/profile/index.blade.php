@@ -48,7 +48,7 @@
             </div>
             <div class="modal-footer">
                 @if ($user == Auth::user())
-                <form enctype="multipart/form-data" action="/perfil" method="POST">
+                <form class="form-uppicture" enctype="multipart/form-data" action="/perfil" method="POST">
                     <input type="file" name="avatar">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     <input type="submit" class="btn btn-sm btn-primary">
