@@ -8,7 +8,7 @@
         <a class="profile-name">
             <span class="blockLink">{{ $user->nome }}</span>
             @if (empty($user->username) == 0)
-                <p class="small">&#64{{ $user->username }}<p>
+                <p class="small">&#64{{ $user->username }}</p>
             @endif
         </a>
     </div>
