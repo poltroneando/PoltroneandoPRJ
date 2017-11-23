@@ -2,11 +2,14 @@
 
 @section('content')
 <div class="topo-perfil">
-<div class="profile-capa" style="background-image:url('/uploads/covers/{{ $user->capa}}'">
+<div class="profile-capa" style="background-image:url('{{ $user->capa}}')">
     <div class="profile-header">
         <img src="{{ $user->foto }}" class="profile-pic" style="width:130px; height:130px; border-radius:10%;"></br>
         <a class="profile-name">
             <span class="blockLink">{{ $user->nome }}</span>
+            @if (empty($user->username) == 0)
+                <p class="small">&#64{{ $user->username }}<p>
+            @endif
         </a>
     </div>
 </div>
