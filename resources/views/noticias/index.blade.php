@@ -15,7 +15,7 @@
             @endif
                 <img src="data:image/jpeg;base64,{{base64_encode($noticia->image)}}" alt="{{$noticia->title}}">
             </a>
-            <p class="origem-noticia"><small>Por {{ $noticia->site_origem->name }} em {{ $noticia->time_and_date->subHour(3)->format('d-m-Y H-i') }} </small></p>
+            <p class="origem-noticia"><small>Por {{ $noticia->site_origem->name }} em {{ $noticia->time_and_date->subHour(3)->format('d-m-Y H:i') }} </small></p>
             @if ($noticia->news_site_id == 1)
             <a href="{{$noticia->site_origem->url}}{{$noticia->link}}" target="_blank">
             @else

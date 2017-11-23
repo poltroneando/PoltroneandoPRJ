@@ -19,6 +19,7 @@ Route::auth();
 Route::group(['prefix'=>'/perfil'],function(){
     Route::get('/',['middleware'=>'auth','uses'=>'PerfilController@profile']);    
     Route::post('/', ['middleware'=>'auth','uses'=>'PerfilController@update_avatar']);
+    Route::post('/cover', ['middleware'=>'auth','uses'=>'PerfilController@update_cover']);
     Route::post('/gravar', ['middleware'=>'auth','uses'=>'PerfilController@gravar']);
     Route::get('/editar', ['middleware' => 'auth', 'uses'=>'PerfilController@editar']);
     Route::get('/{uuid}','PerfilController@show');

@@ -18,4 +18,7 @@ $(document).ready(function(){
 	$(".profile-pic").click(function(){
 		$("#profile-picture").modal();
 	});
+	$(".cng-cover").click(function(){
+		$("#profile-cover").modal();
+	});
 });

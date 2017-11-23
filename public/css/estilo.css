@@ -69,8 +69,8 @@ a:hover {
     background-attachment: local;
 }
 #img-modal{
-     border-style: solid 2px;
-     
+     border: solid 2px;
+     max-width: -webkit-fill-available;
 }
 .profile-header {
     padding: 45px 0 15px;
@@ -181,6 +181,16 @@ a:hover {
 }
 .form-uppicture{
     display: inline;
+}
+.cng-cover{
+    float: right;
+    margin: -25px 10px 10px;
+    background: transparent;
+    border: none;
+}
+.cng-cover span{
+    color: white;
+    opacity: 0.8;
 }
 @media only screen and (max-width: 800px) {
     .form-row-half{

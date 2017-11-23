@@ -65,6 +65,24 @@ class PerfilController extends Controller
     	}
     	return view('profile/index', array('user' => Auth::user()) );
 	}
+    public function update_cover(Request $request){
+    	// Handle the user upload of cover
+    	if($request->hasFile('cover')){
+			$client = new \Imgur\Client();
+			$client->setOption('client_id', 'e32cdf713264617');
+			$client->setOption('client_secret', '4afcf9c0c754db308acc83c9d396c8d5f6f06c28');
+			$cover = $request->file('cover');
+			$imageData = [
+				'image' => $cover,
+				'type' => 'file',
+			];
+			$res = $client->api('image')->upload($imageData);
+    		$user = Auth::user();
+    		$user->capa = $res->getData()['link'];
+    		$user->save();
+    	}
+    	return view('profile/index', array('user' => Auth::user()) );
+	}
 	public function editar(){
 		return view('profile/editar', array('user' =>Auth::user()));
 	}
