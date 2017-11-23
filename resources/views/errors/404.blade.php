@@ -32,7 +32,7 @@
         <div class="topo-bar">
             <!-- Branding Image -->
             <a class="navbar-brand" href="{{ url('/') }}">
-                <img src="/imgs/marca.png" class="img-brand" alt="Poltroneando" style="max-height:35px;">
+                <img src="{{ url('public/imgs/marca.png') }}" class="img-brand" alt="Poltroneando" style="max-height:35px;">
             </a>
         </div>
         <div class="container">
