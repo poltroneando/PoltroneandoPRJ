@@ -31,7 +31,9 @@ class PerfilController extends Controller
 		$user = Auth::user();
 		$user->password = bcrypt($data['password']);
 		$user->nome = $data['nome'];
-		$user->username = $data['username'];
+		if (empty($data['username']) == 0){
+			$user->username = $data['username'];
+		}
 		$user->genero = $data['genero'];
 		$user->data_nascimento = $data['data_nascimento'];
 		$user->biografia = $data['biografia'];
