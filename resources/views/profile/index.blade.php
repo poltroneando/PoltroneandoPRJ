@@ -67,6 +67,9 @@
     <div class="modal-dialog">
         <!-- Modal content-->
         <div class="modal-content">
+            <div class="modal-header">
+                <h2>Atualizar foto de capa</h2>
+            </div>
             <div class="modal-body">
                 @if ($user == Auth::user())
                 <form class="form-upcover" enctype="multipart/form-data" action="/perfil/cover" method="POST">
