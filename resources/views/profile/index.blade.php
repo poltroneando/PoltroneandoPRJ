@@ -15,6 +15,7 @@
     </div>
     @if ($user == Auth::user())
         <button class="cng-cover"><span class="glyphicon glyphicon-camera"></span></button>
+        <a href="{{ url('/perfil/editar') }}" class="button edit-perfil"><span class="glyphicon glyphicon-pencil"></span></a>
     @endif
 </div>
 <div class="container">

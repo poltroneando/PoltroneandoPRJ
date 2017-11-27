@@ -182,13 +182,16 @@ a:hover {
 .form-uppicture{
     display: inline;
 }
-.cng-cover{
+.cng-cover, .edit-perfil{
     float: right;
     margin: -25px 10px 10px;
     background: transparent;
     border: none;
 }
-.cng-cover span{
+.edit-perfil{
+    margin: -25px 0px 10px;
+}
+.cng-cover span, .edit-perfil span{
     color: white;
     opacity: 0.8;
 }

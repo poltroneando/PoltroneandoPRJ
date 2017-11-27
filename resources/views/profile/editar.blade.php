@@ -86,7 +86,7 @@
             <div class="form-row-half">
                 <div class="form-group">
                     <label for="data_nascimento" class="control-label">Data de Nascimento</label>
-                    <input id="data_nascimento" type="date" class="form-control" name="data_nascimento" value="{{ old('data_nascimento') }}">
+                    <input id="data_nascimento" type="date" class="form-control" name="data_nascimento" value="{{ old('data_nascimento',date('d-m-Y')) }}">
                 </div>
             </div>
             <div class="form-row">
