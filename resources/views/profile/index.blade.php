@@ -68,7 +68,7 @@
         <!-- Modal content-->
         <div class="modal-content">
             <div class="modal-header">
-                <h2>Atualizar foto de capa</h2>
+                <p><strong>Atualizar foto de capa</strong></p>
             </div>
             <div class="modal-body">
                 @if ($user == Auth::user())
