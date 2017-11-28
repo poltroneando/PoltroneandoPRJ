@@ -41,6 +41,7 @@
 </div>
 <div class="container">
     <div class="panel">
+    <p>Isso é tudo pessoal</p>
     </div>
 </div>
 <div class="modal fade" id="profile-picture" role="dialog">
