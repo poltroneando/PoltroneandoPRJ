@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests;
 use Illuminate\Http\Request;
+use App\Noticia;
 
 class HomeController extends Controller
 {
@@ -14,7 +15,6 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
     }
 
     /**
@@ -24,6 +24,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $news = Noticia::orderBy('time_and_date', 'desc')->take(4);
+        return view('home',['news'=>$news]);
     }
 }

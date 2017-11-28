@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'HomeContxroller@index');
 
 Route::auth();
 Route::group(['prefix'=>'/perfil'],function(){
@@ -45,5 +43,5 @@ Route::get('/login/facebook/callback', 'Auth\AuthController@facebookCallback');
 Route::get('/login/google', 'Auth\AuthController@loginGoogle');
 Route::get('/login/google/callback', 'Auth\AuthController@googleCallback');
 
-Route::get('/home', 'HomeController@index');
+Route::get('/home', 'HomeContxroller@index');
 
